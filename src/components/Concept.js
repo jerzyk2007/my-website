@@ -3,7 +3,7 @@ import './Concept.css';
 
 const Concept = () => {
 
-    const [phrases, setPhrases] = useState([
+    const [phrases] = useState([
         "I'm a programming enthusiast, and every day, I expand my knowledge and skills.",
         "My learning is not only about acquiring theoretical knowledge but also practical experience.",
         "I regularly practice what I learn by building projects and tackling programming challenges.",
