@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import EmbeddedPage from './EmbeddedPage ';
+import InsideHtmlPage from './InsideHtmlPage';
 import { FiX } from "react-icons/fi";
 import './CardItem.css';
 
@@ -24,7 +24,7 @@ const CardItem = (props) => {
                         />
                     </figure>}
                     {props.www && < figure className='card-item__pic-wrap' data-category={props.label}>
-                        {/* <EmbeddedPage src={props.src} title={props.title} /> */}
+                        <InsideHtmlPage src={props.src} title={props.title} />
                     </figure>}
                 </div>
 
