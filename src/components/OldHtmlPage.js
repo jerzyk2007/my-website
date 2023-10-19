@@ -1,7 +1,7 @@
 import React from 'react';
-import './OldHTMLPgae.css';
+import './OldHtmlPage.css';
 
-class OldHTMLPage extends React.Component {
+class OldHtmlPage extends React.Component {
     render() {
         const { iframeSrc } = this.props;
         return (
@@ -15,4 +15,4 @@ class OldHTMLPage extends React.Component {
     }
 }
 
-export default OldHTMLPage;
+export default OldHtmlPage;
