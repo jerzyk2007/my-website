@@ -31,7 +31,7 @@
     white-space: pre-line;
 }
 
-.card-item__info-button {
+.card-item__info__info-button {
     position: absolute;
     top: 0;
     right: 0;

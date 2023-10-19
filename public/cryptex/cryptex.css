@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+    font-family: roboto, serif;
+}
+
+
+
+.wrapper-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    transform-style: preserve-3d;
+    gap: 1.5vw;
+    transform: rotatey(6deg) rotateX(34deg);
+}
+
+.container .text {
+    position: relative;
+    width: 8vw;
+    height: 8vw;
+    transform-style: preserve-3d;
+    transition: 2.5s ease;
+    transition-delay: calc(0.2s * var(--o));
+}
+
+
+.container .text:first-child,
+.container .text:last-child {
+    top: -1vw;
+    left: -1vw;
+}
+
+.container .text:last-child {
+    left: .5vw;
+}
+
+.container:hover .text {
+    transform: rotateX(-396deg);
+}
+
+.container:hover .text:nth-of-type(odd) {
+    transform: rotateX(468deg);
+}
+
+.container .text:first-child span,
+.container .text:last-child span {
+    background: linear-gradient(#0d0b31, #161352);
+    color: #f05050;
+}
+
+.container .text span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ffd700, #bba006);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vw;
+    color: #046812;
+    transform-style: preserve-3d;
+    transform: rotatex(calc(36deg * var(--i))) translateZ(12vw);
+}
+
+.container .text:first-child,
+.container .text:last-child {
+    width: 10vw;
+    height: 10vw;
+}
+
+.container .text:first-child span,
+.container .text:last-child span {
+    font-size: 3vw;
+    transform: rotatex(calc(36deg * var(--i))) translateZ(15vw);
+}
