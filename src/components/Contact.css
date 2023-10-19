@@ -1,0 +1,44 @@
+.contact {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 70px;
+    background: rgb(0, 0, 0);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.contact__text {
+    border-radius: 10px;
+    background-color: rgb(72, 72, 72);
+    color: #e6ff05;
+    padding: 5px 15px;
+    margin: 0 2vw;
+    font-size: 1.1vw;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contact__link {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contact__link:hover {
+    color: #917cee;
+}
+
+@media only screen and (max-width: 851px) {
+    .contact__text {
+        font-size: 2.1vw;
+    }
+}
