@@ -1,12 +1,12 @@
 import Concept from "../Concept";
-import Contact from "../Contact";
+import Footer from "../Footer";
 import './AboutMe.css';
 
 const AboutMe = () => {
     return (
         <div className='about-me'>
             <Concept />
-            <Contact />
+            <Footer />
         </div>
     );
 };
