@@ -1,13 +1,10 @@
-// import { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { DiAtom } from "react-icons/di";
-// import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import './Navmenu.css';
 
 const Navmenu = ({ handleCloseMobileMenu, mobileMenu }) => {
 
     return (
-        <>
+        <nav>
             <ul className={mobileMenu ? 'navmenu__menu active' : 'navmenu__menu'}>
                 <li className="navmenu-items">
                     <Link to='/' className='navmenu-links' onClick={handleCloseMobileMenu}>Home</Link>
@@ -26,7 +23,7 @@ const Navmenu = ({ handleCloseMobileMenu, mobileMenu }) => {
                         </li> */}
             </ul>
 
-        </>
+        </nav>
     );
 };
 

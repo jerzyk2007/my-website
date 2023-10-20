@@ -19,7 +19,7 @@ const Header = () => {
 
     return (
         <>
-            <nav className="header">
+            <header className="header">
                 <div className="header-container">
                     <Link to='/' className='header-logo'>
                         <DiAtom className='header-logo-atom' onClick={handleCloseMobileMenu} /><p className='header-logo-title' onClick={handleCloseMobileMenu}>Front Web Developer</p> </Link>
@@ -29,7 +29,7 @@ const Header = () => {
                         {!mobileMenu ? <HiOutlineMenu onClick={handleMobileMenu} /> : <HiOutlineX onClick={handleMobileMenu} />}
                     </div>
                 </div>
-            </nav>
+            </header>
         </>
     );
 };
