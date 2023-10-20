@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from "./components/Navbar";
+import Header from './components/Header';
 import Home from './components/pages/Home';
 import AboutMe from './components/pages/AboutMe';
 import Projects from './components/pages/Projects';
@@ -9,13 +9,14 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <Header />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/projects' element={<Projects />} />
           <Route path='/about-me' element={<AboutMe />} />
           <Route path='/robbo.html' element={<OldHtmlPage iframeSrc='/robbo/robbo.html' title='robbo' />} />
           <Route path='/cryptex.html' element={<OldHtmlPage iframeSrc='/cryptex/cryptex.html' title='cryptex' />} />
+          <Route path='*' element={<Home />} />
         </Routes>
       </Router>
     </>

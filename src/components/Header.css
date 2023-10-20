@@ -1,0 +1,68 @@
+.header {
+    user-select: none;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 70px;
+    background: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header-logo-atom {
+    font-size: 1.8rem;
+    margin: 0 10px;
+    color: #a899e9;
+    transition: all .2s ease;
+    animation: atom 1.8s infinite linear;
+}
+
+.header-logo-title {
+    font-size: 1.3rem;
+    transition: all .2s ease;
+}
+
+.header-logo-title:hover {
+    color: #917cee;
+}
+
+@keyframes atom {
+    0% {
+        rotate: 0;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+.header-menu {
+    display: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 960px) {
+    .header-menu {
+        display: block;
+        margin: 0 20px;
+        font-size: 1.9rem;
+    }
+}
