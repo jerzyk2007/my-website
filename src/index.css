@@ -15,7 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 #root {
@@ -27,7 +27,6 @@ body {
 
 .App {
   width: 100%;
-  max-width: 800px;
   height: 100vh;
   display: flex;
   flex-direction: column;

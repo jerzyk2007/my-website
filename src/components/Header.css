@@ -28,7 +28,7 @@
 }
 
 .header-logo-atom {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 0 10px;
     color: #a899e9;
     transition: all .2s ease;
@@ -36,7 +36,7 @@
 }
 
 .header-logo-title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     transition: all .2s ease;
 }
 
@@ -64,5 +64,9 @@
         display: block;
         margin: 0 20px;
         font-size: 1.9rem;
+    }
+
+    .header-logo-title {
+        font-size: 1.3rem;
     }
 }
