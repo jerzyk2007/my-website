@@ -1,22 +1,21 @@
-.skills-cards {
-    flex-grow: 1;
+.cardsnew {
     width: 100vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     padding: 5vh;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
-.skills-cards-title {
+.cardsnew h1 {
     font-size: 3vw;
     text-align: center;
     padding: 2vh 0;
     color: rgb(17, 11, 100);
 }
 
-.skills-cards__container {
+.cardsnew__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -26,11 +25,11 @@
 }
 
 @media only screen and (max-width: 960px) {
-    .skills-cards {
+    .cardsnew {
         padding: 1vh 0;
     }
 
-    .skills-cards-h1 {
+    .cardsnew h1 {
         font-size: 5.5vw;
         padding: 1vh 0;
     }

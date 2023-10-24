@@ -7,7 +7,7 @@ import OldHtmlPage from './components/OldHtmlPage';
 
 function App() {
   return (
-    <>
+    <div className='App'>
       <Router>
         <Header />
         <Routes>
@@ -19,7 +19,7 @@ function App() {
           <Route path='*' element={<Home />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
