@@ -1,0 +1,14 @@
+.memorek {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.memorek-title {
+    background-color: rgb(92, 201, 87);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -48,7 +48,7 @@ const SkillsCards = () => {
                     title='Memorek'
                     text="Program for learning the English language.."
                     label='REACT + NODE'
-                    path='/projects'
+                    path='/memorek'
                     description='Website under construction'
                     www=''
                 />

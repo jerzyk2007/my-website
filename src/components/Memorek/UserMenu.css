@@ -1,0 +1,12 @@
+.user-menu {
+    background-color: rgb(92, 201, 87);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.user-menu-button {
+    margin: 20px 0px;
+    font-size: 28px;
+    color: #fff;
+}
