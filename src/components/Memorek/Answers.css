@@ -1,7 +1,8 @@
-.answers {
+.answer {
     flex-basis: 50%;
     background-color: rgb(199, 225, 96);
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }

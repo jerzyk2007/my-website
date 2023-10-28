@@ -1,45 +1,32 @@
 import { createContext, useState, useEffect } from "react";
-import axios from 'axios';
+import api from './../api/phrases';
 
 const DataContext = createContext({});
 
 
 export const DataProvider = ({ children }) => {
-    const [phrases, setPhrases] = useState([
-        {
-            id: 1,
-            question: "white",
-            answer: "biały"
-        },
-        {
-            id: 2,
-            question: "color",
-            answer: "kolor"
-        },
-        {
-            id: 3,
-            question: "table",
-            answer: "stół"
-        },
-        {
-            id: 4,
-            question: "clock",
-            answer: "zegar"
-        },
-        {
-            id: 5,
-            question: "name",
-            answer: "imię"
-        },
-        {
-            id: 6,
-            question: "key",
-            answer: "klawisz"
-        }
-    ]);
+    const [phrases, setPhrases] = useState([]);
+    const [errorMessage, setErrorMessage] = useState('');
+    const [collections, setCollections] = useState('phrases');
+
+
+    useEffect(() => {
+        const fetchPhrases = async () => {
+            try {
+                const response = await api.get(`/${collections}`);
+                setPhrases(response.data);
+            }
+            catch (err) {
+                console.log(`Error: ${err.message}`);
+                setErrorMessage(`Error: ${err.message}`);
+            }
+        };
+        fetchPhrases();
+    }, []);
+
 
     return (
-        <DataContext.Provider value={{ phrases, setPhrases }}>
+        <DataContext.Provider value={{ phrases, setPhrases, errorMessage, setCollections }}>
             {children}
         </DataContext.Provider>
     );
