@@ -9,4 +9,9 @@
     margin: 20px 0px;
     font-size: 28px;
     color: #fff;
+    flex-grow: 1;
+}
+
+.user-menu-button:hover {
+    color: red;
 }

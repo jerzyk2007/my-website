@@ -8,6 +8,7 @@
 
 .memorek-title {
     background-color: rgb(92, 201, 87);
+    padding: 8px 0;
     display: flex;
     justify-content: center;
     align-items: center;
