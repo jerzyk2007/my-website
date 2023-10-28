@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import DataContext from './context/DataContext';
 import Questions from './Questions';
 import Answers from './Answers';
@@ -6,7 +6,7 @@ import './Learn.css';
 
 
 const Learn = () => {
-    const { phrases, errorMessage } = useContext(DataContext);
+    const { phrases } = useContext(DataContext);
     const [phrase, setPhrase] = useState('');
     const [blink, setBlink] = useState(true);
 

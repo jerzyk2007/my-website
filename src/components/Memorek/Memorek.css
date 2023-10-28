@@ -1,6 +1,7 @@
 .memorek {
     flex-grow: 1;
     width: 100%;
+    max-width: 600px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -8,7 +9,8 @@
 
 .memorek-title {
     background-color: rgb(92, 201, 87);
-    padding: 8px 0;
+    /* padding: 8px 0; */
+    height: 50px;
     color: #2b13b1;
     display: flex;
     justify-content: center;

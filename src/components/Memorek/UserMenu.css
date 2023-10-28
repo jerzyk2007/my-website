@@ -3,10 +3,11 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    height: 70px;
 }
 
 .user-menu-button {
-    margin: 20px 0px;
+    /* margin: 20px 0px; */
     font-size: 28px;
     color: #fff;
     flex-grow: 1;

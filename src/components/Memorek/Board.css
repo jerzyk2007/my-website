@@ -1,4 +1,6 @@
 .board {
     flex-grow: 1;
     display: flex;
+    max-height: calc(100vh - 70px - 70px - 50px);
+
 }

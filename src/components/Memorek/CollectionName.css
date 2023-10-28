@@ -1,0 +1,28 @@
+.collection-name {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid black;
+    user-select: none;
+}
+
+.collection-name-title {
+    flex-grow: 1;
+    font-size: 1.2rem;
+}
+
+.collection-name-button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 0px;
+    font-size: 1rem;
+    margin: 0 10px;
+    background: rgb(251, 221, 54);
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.collection-name-button:last-child {
+    background: rgb(71, 239, 91);
+}
