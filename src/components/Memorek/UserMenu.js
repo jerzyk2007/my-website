@@ -1,18 +1,23 @@
-import { useContext } from "react";
-import DataContext from "./context/DataContext";
-import { SlControlPlay, SlUser, SlMagnifier, SlBookOpen, SlList } from "react-icons/sl";
+import { Link } from 'react-router-dom';
+import { SlControlPlay, SlUser, SlBookOpen, SlList } from "react-icons/sl";
 import './UserMenu.css';
 
 const UserMenu = () => {
-    const { handleChangeBoard } = useContext(DataContext);
 
     return (
         <div className="user-menu">
-            <SlBookOpen className="user-menu-button" onClick={() => handleChangeBoard('instruction')} />
-            <SlControlPlay className="user-menu-button" onClick={() => handleChangeBoard('learn')} />
-            <SlList className="user-menu-button" onClick={() => handleChangeBoard('collections')} />
-            {/* <SlMagnifier className="user-menu-button" /> */}
-            <SlUser className="user-menu-button" />
+            <Link to="/memorek/" className="user-menu-link">
+                <SlBookOpen />
+            </Link>
+            <Link to="/memorek/learn" className="user-menu-link" >
+                <SlControlPlay />
+            </Link>
+            <Link to="/memorek/collections" className="user-menu-link" >
+                <SlList />
+            </Link>
+            <Link to="/memorek/login" className="user-menu-link" >
+                <SlUser />
+            </Link>
         </div>
     );
 };

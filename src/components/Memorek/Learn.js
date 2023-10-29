@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import DataContext from './context/DataContext';
 import Questions from './Questions';
 import Answers from './Answers';
@@ -6,10 +7,10 @@ import './Learn.css';
 
 
 const Learn = () => {
-    const { phrases, handleChangeBoard } = useContext(DataContext);
+    const { phrases } = useContext(DataContext);
     const [phrase, setPhrase] = useState('');
     const [blink, setBlink] = useState(true);
-
+    const navigate = useNavigate();
 
     const handleDraw = () => {
         if (phrases.length) {
@@ -23,9 +24,9 @@ const Learn = () => {
 
     useEffect(() => {
         if (phrases.length === 0) {
-            handleChangeBoard('collections');
+            navigate('/memorek/collections');
         }
-    }, []);
+    }, [phrases, navigate]);
 
     return (
         <div className='learn'>

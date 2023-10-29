@@ -1,14 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import DataContext from './context/DataContext';
 import './CollectionName.css';
 
 const CollectionName = ({ name }) => {
-    const { handleChangeBoard, fetchPhrases } = useContext(DataContext);
+    const { fetchPhrases } = useContext(DataContext);
+    const navigate = useNavigate();
 
     const handleCollection = async () => {
         try {
             await fetchPhrases(name);
-            handleChangeBoard('learn');
+            navigate('/memorek/learn');
         } catch (err) {
             console.log(err);
         }
