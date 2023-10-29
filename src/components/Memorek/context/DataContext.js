@@ -19,7 +19,7 @@ export const DataProvider = ({ children }) => {
     useEffect(() => {
         const fetchPhrases = async () => {
             try {
-                const response = await api.get(`/${collections}`);
+                const response = await api.get(`/phrases/${collections}`);
                 setPhrases(response.data);
             }
             catch (err) {
@@ -29,6 +29,21 @@ export const DataProvider = ({ children }) => {
         };
         fetchPhrases();
     }, [collections]);
+
+    // useEffect(() => {
+    //     const fetchPhrases = async () => {
+    //         try {
+    //             const response = await api.get(`/phrases/${collections}`);
+    //             setPhrases(response.data);
+    //             console.log(response.data);
+    //         }
+    //         catch (err) {
+    //             console.log(`Error: ${err.message}`);
+    //             setErrorMessage(`Error: ${err.message}`);
+    //         }
+    //     };
+    //     fetchPhrases();
+    // }, [collections]);
 
     useEffect(() => {
         const fetchPhrases = async () => {
@@ -44,11 +59,20 @@ export const DataProvider = ({ children }) => {
         fetchPhrases();
     }, []);
 
+    const handleChangeBoard = (boardName) => {
+        const updatedBoard = { ...board };
+        for (const key in updatedBoard) {
+            updatedBoard[key] = false;
+        }
+        updatedBoard[boardName] = true;
+        setBoard(updatedBoard);
+    };
+
 
 
 
     return (
-        <DataContext.Provider value={{ phrases, setPhrases, errorMessage, setCollections, board, setBoard, setCollections, collectionsName, }}>
+        <DataContext.Provider value={{ phrases, setPhrases, errorMessage, collections, setCollections, board, setBoard, collectionsName, handleChangeBoard }}>
             {children}
         </DataContext.Provider>
     );

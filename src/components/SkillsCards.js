@@ -47,9 +47,10 @@ const SkillsCards = () => {
                     iframeSrc=''
                     title='Memorek'
                     text="Program for learning the English language.."
-                    label='REACT + NODE'
+                    label='REACT + NODE + MONGODB'
                     path='/memorek'
-                    description='Website under construction'
+                    description='A vocabulary learning program that allows you to study words, phrases, definitions, and also take tests based on your existing knowledge. 
+                    The program is currently under construction.'
                     www=''
                 />
             </div>

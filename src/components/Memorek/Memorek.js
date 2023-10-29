@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import './Memorek.css';
 import UserMenu from "./UserMenu";
 import Board from "./Board";
