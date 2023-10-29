@@ -1,0 +1,27 @@
+.instruction {
+    flex-grow: 1;
+}
+
+.instruction-title {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.instruction-text {
+    width: 100%;
+    font-size: 1.3rem;
+    text-align: justify;
+}
+
+.instruction__icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.3rem;
+    margin: 20px 0;
+}
+
+.instruction-button {
+    flex-basis: 20%;
+    color: green;
+}

@@ -5,3 +5,8 @@
     /* max-height: 100%; */
     overflow-y: auto;
 }
+
+.collections-title {
+    text-align: center;
+    color: rgb(255, 77, 0);
+}

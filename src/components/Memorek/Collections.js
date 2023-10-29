@@ -11,6 +11,7 @@ const Collections = () => {
 
     return (
         <div className='collections'>
+            <h2 className='collections-title'>Select collection</h2>
             {collectionElements}
         </div>
     );

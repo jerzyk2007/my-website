@@ -9,9 +9,9 @@ export const DataProvider = ({ children }) => {
     const [errorMessage, setErrorMessage] = useState('');
     const [collections, setCollections] = useState('phrases');
     const [board, setBoard] = useState({
-        learn: true,
+        instruction: true,
+        learn: false,
         collections: false,
-        settings: false,
         user: false
     });
     const [collectionsName, setCollectionsName] = useState([]);
