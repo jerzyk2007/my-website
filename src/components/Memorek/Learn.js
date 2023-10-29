@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import DataContext from './context/DataContext';
 import Questions from './Questions';
 import Answers from './Answers';
@@ -6,7 +6,7 @@ import './Learn.css';
 
 
 const Learn = () => {
-    const { phrases } = useContext(DataContext);
+    const { phrases, handleChangeBoard } = useContext(DataContext);
     const [phrase, setPhrase] = useState('');
     const [blink, setBlink] = useState(true);
 
@@ -20,6 +20,12 @@ const Learn = () => {
             }
         }
     };
+
+    useEffect(() => {
+        if (phrases.length === 0) {
+            handleChangeBoard('collections');
+        }
+    }, []);
 
     return (
         <div className='learn'>

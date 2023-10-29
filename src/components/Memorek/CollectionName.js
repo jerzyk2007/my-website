@@ -3,11 +3,15 @@ import DataContext from './context/DataContext';
 import './CollectionName.css';
 
 const CollectionName = ({ name }) => {
-    const { setCollections, handleChangeBoard } = useContext(DataContext);
+    const { handleChangeBoard, fetchPhrases } = useContext(DataContext);
 
-    const handleCollection = () => {
-        setCollections(name);
-        handleChangeBoard('learn');
+    const handleCollection = async () => {
+        try {
+            await fetchPhrases(name);
+            handleChangeBoard('learn');
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     return (
