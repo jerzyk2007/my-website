@@ -1,3 +1,5 @@
+
+
 import { createContext, useState, useEffect } from "react";
 import api from './../api/phrases';
 
@@ -16,34 +18,29 @@ export const DataProvider = ({ children }) => {
     });
     const [collectionsName, setCollectionsName] = useState([]);
 
+    const handleChangeBoard = (boardName) => {
+        const updatedBoard = { ...board };
+        for (const key in updatedBoard) {
+            updatedBoard[key] = false;
+        }
+        updatedBoard[boardName] = true;
+        setBoard(updatedBoard);
+    };
+
+    const fetchPhrases = async () => {
+        try {
+            const response = await api.get(`/phrases/${collections}`);
+            setPhrases(response.data);
+        }
+        catch (err) {
+            console.log(`Error: ${err.message}`);
+            setErrorMessage(`Error: ${err.message}`);
+        }
+    };
     useEffect(() => {
-        const fetchPhrases = async () => {
-            try {
-                const response = await api.get(`/phrases/${collections}`);
-                setPhrases(response.data);
-            }
-            catch (err) {
-                console.log(`Error: ${err.message}`);
-                setErrorMessage(`Error: ${err.message}`);
-            }
-        };
         fetchPhrases();
     }, [collections]);
 
-    // useEffect(() => {
-    //     const fetchPhrases = async () => {
-    //         try {
-    //             const response = await api.get(`/phrases/${collections}`);
-    //             setPhrases(response.data);
-    //             console.log(response.data);
-    //         }
-    //         catch (err) {
-    //             console.log(`Error: ${err.message}`);
-    //             setErrorMessage(`Error: ${err.message}`);
-    //         }
-    //     };
-    //     fetchPhrases();
-    // }, [collections]);
 
     useEffect(() => {
         const fetchPhrases = async () => {
@@ -59,20 +56,8 @@ export const DataProvider = ({ children }) => {
         fetchPhrases();
     }, []);
 
-    const handleChangeBoard = (boardName) => {
-        const updatedBoard = { ...board };
-        for (const key in updatedBoard) {
-            updatedBoard[key] = false;
-        }
-        updatedBoard[boardName] = true;
-        setBoard(updatedBoard);
-    };
-
-
-
-
     return (
-        <DataContext.Provider value={{ phrases, setPhrases, errorMessage, collections, setCollections, board, setBoard, collectionsName, handleChangeBoard }}>
+        <DataContext.Provider value={{ phrases, setPhrases, errorMessage, collections, setCollections, board, setBoard, collectionsName, handleChangeBoard, fetchPhrases }}>
             {children}
         </DataContext.Provider>
     );

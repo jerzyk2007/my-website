@@ -11,6 +11,7 @@
     width: 100%;
     font-size: 1.3rem;
     text-align: justify;
+    padding: 5px 10px;
 }
 
 .instruction__icon {
