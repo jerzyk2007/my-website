@@ -6,8 +6,10 @@ const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
     const [phrases, setPhrases] = useState([]);
+    const [test, setTest] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     const [collectionsName, setCollectionsName] = useState([]);
+    const [LearnOrTest, setLearnOrTest] = useState('learn');
 
     const fetchPhrases = async (collections) => {
         try {
@@ -35,7 +37,7 @@ export const DataProvider = ({ children }) => {
     }, []);
 
     return (
-        <DataContext.Provider value={{ phrases, setPhrases, errorMessage, collectionsName, fetchPhrases }}>
+        <DataContext.Provider value={{ phrases, test, errorMessage, collectionsName, fetchPhrases, LearnOrTest, setLearnOrTest }}>
             {children}
         </DataContext.Provider>
     );

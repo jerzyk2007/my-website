@@ -1,0 +1,10 @@
+.test {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.test-title {
+    text-align: center;
+    padding: 5px 0;
+}

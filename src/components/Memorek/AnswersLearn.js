@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import DataContext from './context/DataContext';
-import './Answers.css';
+import './AnswersLearn.css';
 
 const Answers = ({ phrase, handleDraw, blink }) => {
     const { errorMessage } = useContext(DataContext);
