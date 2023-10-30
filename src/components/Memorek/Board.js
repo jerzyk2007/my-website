@@ -1,4 +1,3 @@
-import { Routes, Route } from 'react-router-dom';
 import Learn from './Learn';
 import Collections from './Collections';
 import Instruction from './Instruction';
