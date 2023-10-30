@@ -20,7 +20,7 @@ const CollectionName = ({ name }) => {
         <div className="collection-name">
             <p className='collection-name-title'>{name}</p>
             <button className='collection-name-button' onClick={handleCollection}>Learn</button>
-            <button className='collection-name-button'>Test</button>
+            {/* <button className='collection-name-button'>Test</button> */}
         </div>
     );
 };

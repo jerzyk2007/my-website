@@ -1,11 +1,7 @@
-import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import './Memorek.css';
 import UserMenu from "./UserMenu";
 import Board from "./Board";
 import { DataProvider } from "./context/DataContext";
-import Instruction from './Instruction';
-import Learn from './Learn';
-import Collections from './Collections';
 
 const Memorek = () => {
 
