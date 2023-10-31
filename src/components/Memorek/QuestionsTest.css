@@ -1,4 +1,17 @@
 .questions-test {
-    flex-basis: 20%;
+    flex-grow: 1;
+    min-height: 15%;
     background-color: rgb(113, 205, 238);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+@media screen and (max-width: 960px) {
+
+    .questions-test {
+        font-size: .8rem;
+    }
 }

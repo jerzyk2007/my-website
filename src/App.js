@@ -9,16 +9,19 @@ import Memorek from './components/Memorek/Memorek';
 function App() {
   return (
     <div className='App'>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/projects' element={<Projects />} />
-        <Route path='/about-me' element={<AboutMe />} />
-        <Route path='/memorek/*' element={<Memorek />} />
-        <Route path='/robbo.html' element={<OldHtmlPage iframeSrc='/robbo/robbo.html' title='robbo' />} />
-        <Route path='/cryptex.html' element={<OldHtmlPage iframeSrc='/cryptex/cryptex.html' title='cryptex' />} />
-        <Route path='*' element={<Home />} />
-      </Routes>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/about-me' element={<AboutMe />} />
+          <Route path='/memorek/*' element={<Memorek />} />
+          <Route path='/robbo.html' element={<OldHtmlPage iframeSrc='/robbo/robbo.html' title='robbo' />} />
+          <Route path='/cryptex.html' element={<OldHtmlPage iframeSrc='/cryptex/cryptex.html' title='cryptex' />} />
+          <Route path='*' element={<Home />} />
+        </Routes>
+      </Router>
+
     </div>
   );
 }

@@ -4,7 +4,7 @@ import DataContext from './context/DataContext';
 import './CollectionName.css';
 
 const CollectionName = ({ name }) => {
-    const { fetchPhrases, setLearnOrTest } = useContext(DataContext);
+    const { fetchPhrases, setLearnOrTest, fetchTestPhrases } = useContext(DataContext);
     const navigate = useNavigate();
 
     const handleLearn = async () => {
@@ -19,6 +19,7 @@ const CollectionName = ({ name }) => {
 
     const handleTest = async () => {
         try {
+            await fetchTestPhrases(name);
             setLearnOrTest('test');
             navigate('/memorek/test');
         }

@@ -1,5 +1,33 @@
 .answers-test {
     flex-grow: 1;
-    background-color: rgb(199, 225, 96);
+    min-height: 50%;
     overflow-y: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+}
+
+.answers-test-item {
+    font-size: 1.5rem;
+    background-color: #ffffff;
+    width: 100%;
+    flex-grow: 1;
+    border-radius: 20px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    border: 2px solid #000;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 960px) {
+
+    .answers-test-item {
+        font-size: 1.2rem;
+    }
 }
