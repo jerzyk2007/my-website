@@ -1,5 +1,7 @@
 .test-result {
     flex-grow: 1;
+    max-height: calc(100vh - 70px - 70px);
+    overflow-y: auto;
 }
 
 .test-result-title {
