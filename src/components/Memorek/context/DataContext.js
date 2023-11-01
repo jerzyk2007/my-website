@@ -17,7 +17,6 @@ export const DataProvider = ({ children }) => {
     const fetchPhrases = async (collections) => {
         try {
             const response = await axios.get(`${baseURL}/phrases/learn/${collections}`);
-            console.log(response.data);
             setPhrases(response.data);
         }
         catch (err) {
