@@ -4,9 +4,10 @@
     max-height: calc(100vh - 70px - 60px);
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 960px) {
 
     .board {
+        /* max-height: calc(100vh - 70px - 40px - 70px); */
         max-height: calc(100vh - 70px - 40px);
 
     }
