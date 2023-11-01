@@ -6,21 +6,3 @@
     justify-content: flex-start;
     flex-direction: column;
 }
-
-.memorek-title {
-    background-color: rgb(92, 201, 87);
-    /* padding: 8px 0; */
-    height: 50px;
-    color: #2b13b1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media screen and (max-width: 360px) {
-
-    .memorek-title {
-        height: 40px;
-        font-size: 1.2rem;
-    }
-}

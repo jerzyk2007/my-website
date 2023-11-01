@@ -3,17 +3,15 @@
     min-height: 50%;
     overflow-y: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    /* flex-wrap: wrap; */
 }
 
 .answers-test-item {
     font-size: 1.5rem;
     background-color: #ffffff;
     width: 100%;
-    flex-grow: 1;
     border-radius: 20px;
     margin: 5px 0;
     padding: 5px 10px;
@@ -29,5 +27,16 @@
 
     .answers-test-item {
         font-size: 1.2rem;
+        padding: 10px;
+
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .answers-test-item {
+        font-size: 1rem;
+        padding: 5px;
+
     }
 }

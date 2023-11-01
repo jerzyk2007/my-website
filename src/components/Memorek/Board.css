@@ -1,13 +1,13 @@
 .board {
     flex-grow: 1;
     display: flex;
-    max-height: calc(100vh - 70px - 60px - 50px);
+    max-height: calc(100vh - 70px - 60px);
 }
 
 @media screen and (max-width: 360px) {
 
     .board {
-        max-height: calc(100vh - 70px - 40px - 40px);
+        max-height: calc(100vh - 70px - 40px);
 
     }
 }

@@ -1,8 +1,7 @@
 .questions-test {
-    flex-grow: 1;
-    min-height: 15%;
-    background-color: rgb(113, 205, 238);
-    border-radius: 20px;
+    min-height: 10%;
+    background-color: rgb(155, 223, 248);
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,5 +12,12 @@
 
     .questions-test {
         font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .questions-test {
+        font-size: .7rem;
     }
 }
