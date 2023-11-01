@@ -16,7 +16,6 @@ export const DataProvider = ({ children }) => {
 
     const fetchPhrases = async (collections) => {
         try {
-            // const response = await api.get(`/phrases/${collections}`);
             const response = await axios.get(`${baseURL}/phrases/learn/${collections}`);
             console.log(response.data);
             setPhrases(response.data);
@@ -28,9 +27,7 @@ export const DataProvider = ({ children }) => {
     };
 
     const fetchTestPhrases = async (collections) => {
-        // setTest([]);
         try {
-            // const response = await api.get(`/phrases/${collections}`);
             const response = await axios.get(`${baseURL}/phrases/test/${collections}`);
             setTest(response.data);
         }
