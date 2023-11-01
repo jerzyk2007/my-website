@@ -12,7 +12,7 @@ const Test = () => {
     const [itemTest, setItemTest] = useState(test);
     const [counter, setCounter] = useState(0);
     const [result, setResult] = useState(false);
-    console.log(test);
+
     const testResult = () => {
         setResult(true);
         console.log('koniec gry');
@@ -27,10 +27,11 @@ const Test = () => {
         }
     };
 
-    // useEffect(() => {
-    //     setItemTest(test);
-    //     console.log(test);
-    // }, [itemTest]);
+    useEffect(() => {
+        if (test.length === 0) {
+            navigate('/memorek/collections');
+        }
+    }, [test, navigate]);
 
     useEffect(() => {
         if (counter !== 0 && counter === test.length) {
