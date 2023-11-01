@@ -42,7 +42,7 @@ const Test = () => {
     return (
         <div className='test'>
             {!result && <>
-                {itemTest.length > 0 && <h2 className='test-title'>Questions  {counter < itemTest.length ? (counter + 1) : itemTest.length}/{itemTest.length}</h2>}
+                {itemTest.length > 0 && <h2 className='test-title'>Question  {counter < itemTest.length ? (counter + 1) : itemTest.length}/{itemTest.length}</h2>}
                 <QuestionsTest question={itemTest[counter]?.question} />
                 <AnswersTest answers={itemTest[counter]?.answers} setCounter={setCounter} counter={counter} handleAnswers={handleAnswers} />
             </>}
