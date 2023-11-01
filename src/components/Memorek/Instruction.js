@@ -1,4 +1,4 @@
-import { SlControlPlay, SlUser, SlMagnifier, SlBookOpen, SlList } from "react-icons/sl";
+import { SlControlPlay, SlUser, SlMagnifier, SlBookOpen, SlList, SlGraduation } from "react-icons/sl";
 import './Instruction.css';
 
 const Instruction = () => {
@@ -15,6 +15,10 @@ const Instruction = () => {
             <section className='instruction__icon'>
                 <SlControlPlay className="instruction-button" />
                 <span className="instruction-info">Learning and knowledge assessment.</span>
+            </section>
+            <section className='instruction__icon'>
+                <SlGraduation className="instruction-button" />
+                <span className="instruction-info">Test your knowledge.</span>
             </section>
             <section className='instruction__icon'>
                 <SlList className="instruction-button" />

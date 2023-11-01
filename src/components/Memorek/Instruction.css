@@ -1,8 +1,10 @@
 .instruction {
+    font-size: 1.3rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+
 }
 
 .instruction-title {
@@ -12,7 +14,6 @@
 
 .instruction-text {
     width: 100%;
-    font-size: 1.3rem;
     text-align: justify;
     padding: 5px 10px;
 }
@@ -21,11 +22,32 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 1.3rem;
     margin: 20px 0;
 }
 
 .instruction-button {
     flex-basis: 20%;
     color: green;
+}
+
+@media screen and (max-width: 960px) {
+
+    .instruction {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .instruction {
+        font-size: 1rem;
+    }
+
+    .instruction-title {
+        padding: 5px 0;
+    }
+
+    .instruction__icon {
+        margin: 15px 0;
+    }
 }
