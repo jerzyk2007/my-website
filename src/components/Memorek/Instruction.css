@@ -28,6 +28,7 @@
 .instruction-button {
     flex-basis: 20%;
     color: green;
+    font-size: 1.8rem;
 }
 
 @media screen and (max-width: 960px) {
@@ -45,9 +46,15 @@
 
     .instruction-title {
         padding: 5px 0;
+        font-size: 1.1rem;
     }
 
     .instruction__icon {
         margin: 15px 0;
     }
+
+    .instruction-button {
+        font-size: 1.4rem;
+    }
+
 }
