@@ -1,6 +1,6 @@
 .test-result {
     flex-grow: 1;
-    max-height: calc(100vh - 70px - 70px - 50px);
+    max-height: calc(100vh - 70px - 70px);
     overflow-y: auto;
 }
 
@@ -39,4 +39,11 @@
 .test-result-answer {
     background-color: #ed6f6d;
 
+}
+
+@media screen and (max-width: 960px) {
+
+    .test-result {
+        max-height: calc(100vh - 70px - 70px - 50px);
+    }
 }
