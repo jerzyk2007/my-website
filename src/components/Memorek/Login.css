@@ -3,7 +3,7 @@
     width: 100%;
     margin: auto 5px;
     padding: 1.2rem;
-    /* background-color: rgb(226, 241, 242); */
+    background-color: rgb(193, 250, 187);
     font-family: 'Nunito', sans-serif;
     font-size: 1.2rem;
     color: #000000;
@@ -27,6 +27,7 @@
 .login__container-title {
     font-size: .8rem;
     margin-top: 20px;
+
 }
 
 .login-login {
@@ -35,6 +36,7 @@
     border-radius: 5px;
     font-size: 1.1rem;
     background-color: #fff;
+    /* background-color: rgb(215, 250, 211); */
 
 }
 
@@ -47,7 +49,7 @@
     padding: 10px;
     border-radius: 10px;
     font-size: 1rem;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     width: 50%;
     margin: 20px auto 0px;
 }

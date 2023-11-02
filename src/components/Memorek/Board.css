@@ -2,15 +2,14 @@
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    max-height: calc(100vh - 70px - 60px);
+    /* max-height: calc(100vh - 60px - 60px); */
 }
 
+/* 
 @media screen and (max-width: 960px) {
 
     .board {
-        /* max-height: calc(100vh - 70px - 40px - 70px); */
-        max-height: calc(100vh - 70px - 40px);
+        max-height: calc(100vh - 50px - 50px);
 
     }
-}
+} */

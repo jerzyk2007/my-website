@@ -21,13 +21,14 @@ body {
 #root {
   flex-grow: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .App {
+  flex-grow: 1;
   position: absolute;
-  top: 0;
+  top: 60px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -38,4 +39,10 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+@media screen and (max-width: 960px) {
+  .App {
+    top: 50px;
+  }
 }

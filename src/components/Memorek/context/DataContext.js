@@ -11,8 +11,8 @@ export const DataProvider = ({ children }) => {
     const [collectionsName, setCollectionsName] = useState([]);
     const [LearnOrTest, setLearnOrTest] = useState('learn');
 
-    const baseURL = 'https://salty-badlands-34718-49e2594dd237.herokuapp.com';
-    // const baseURL = 'http://localhost:3500';
+    // const baseURL = 'https://salty-badlands-34718-49e2594dd237.herokuapp.com';
+    const baseURL = 'http://localhost:3500';
 
     const fetchPhrases = async (collections) => {
         try {

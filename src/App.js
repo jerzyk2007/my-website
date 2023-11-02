@@ -8,9 +8,9 @@ import Memorek from './components/Memorek/Memorek';
 
 function App() {
   return (
-    <div className='App'>
-      <Router>
-        <Header />
+    <Router>
+      <Header />
+      <div className='App'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/projects' element={<Projects />} />
@@ -20,9 +20,9 @@ function App() {
           <Route path='/cryptex.html' element={<OldHtmlPage iframeSrc='/cryptex/cryptex.html' title='cryptex' />} />
           <Route path='*' element={<Home />} />
         </Routes>
-      </Router>
+      </div>
+    </Router>
 
-    </div>
   );
 }
 

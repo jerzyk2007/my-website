@@ -1,4 +1,6 @@
 .user-menu {
+    position: sticky;
+    bottom: 0;
     background-color: rgb(92, 201, 87);
     display: flex;
     justify-content: space-evenly;
@@ -7,7 +9,6 @@
 }
 
 .user-menu-link {
-    /* margin: 20px 0px; */
     font-size: 1.8rem;
     color: #fff;
     flex-grow: 1;

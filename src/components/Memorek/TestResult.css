@@ -1,6 +1,6 @@
 .test-result {
     flex-grow: 1;
-    max-height: calc(100vh - 70px - 70px);
+    /* max-height: calc(100vh - 60px - 60px); */
     overflow-y: auto;
 }
 
@@ -41,9 +41,9 @@
 
 }
 
-@media screen and (max-width: 960px) {
+/* @media screen and (max-width: 960px) {
 
     .test-result {
-        max-height: calc(100vh - 70px - 70px);
+        max-height: calc(100vh - 50px - 50px);
     }
-}
+} */
