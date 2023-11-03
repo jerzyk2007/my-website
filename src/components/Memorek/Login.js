@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import axios from './api/axios';
 import './Login.css';
 
 const Login = () => {
@@ -8,9 +9,30 @@ const Login = () => {
 
     const userRef = useRef();
 
+    const handleLogin = async () => {
+        try {
+            const response = await axios.post('/login',
+                JSON.stringify({ username, password }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
+            );
+            // const response = await axios.post('http://localhost:3500/login');
+            console.log(response.data);
+        }
+        catch (err) {
+            console.log(`Error: ${err.message}`);
+            setErrMsg(err.message);
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        handleLogin();
     };
+
+
 
     useEffect(() => {
         userRef.current.focus();

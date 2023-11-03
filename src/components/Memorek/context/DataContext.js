@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import axios from "axios";
+import api from '../api/axios';
 
 const DataContext = createContext({});
 
@@ -11,12 +11,9 @@ export const DataProvider = ({ children }) => {
     const [collectionsName, setCollectionsName] = useState([]);
     const [LearnOrTest, setLearnOrTest] = useState('learn');
 
-    // const baseURL = 'https://salty-badlands-34718-49e2594dd237.herokuapp.com';
-    const baseURL = 'http://localhost:3500';
-
     const fetchPhrases = async (collections) => {
         try {
-            const response = await axios.get(`${baseURL}/phrases/learn/${collections}`);
+            const response = await api.get(`/phrases/learn/${collections}`);
             setPhrases(response.data);
         }
         catch (err) {
@@ -27,7 +24,7 @@ export const DataProvider = ({ children }) => {
 
     const fetchTestPhrases = async (collections) => {
         try {
-            const response = await axios.get(`${baseURL}/phrases/test/${collections}`);
+            const response = await api.get(`/phrases/test/${collections}`);
             setTest(response.data);
         }
         catch (err) {
@@ -39,7 +36,7 @@ export const DataProvider = ({ children }) => {
     useEffect(() => {
         const fetchCollectionsName = async () => {
             try {
-                const response = await axios.get(`${baseURL}/collections`);
+                const response = await api.get('/collections');
                 setCollectionsName(response.data);
             }
             catch (err) {
