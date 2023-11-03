@@ -53,3 +53,8 @@
     width: 50%;
     margin: 20px auto 0px;
 }
+
+.login-button:active {
+    background-color: rgb(193, 250, 187);
+
+}

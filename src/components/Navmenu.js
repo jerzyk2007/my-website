@@ -4,7 +4,7 @@ import './Navmenu.css';
 const Navmenu = ({ handleCloseMobileMenu, mobileMenu }) => {
 
     return (
-        <nav>
+        <nav className='navmenu'>
             <ul className={mobileMenu ? 'navmenu__menu active' : 'navmenu__menu'}>
                 <li className="navmenu-items">
                     <Link to='/' className='navmenu-links' onClick={handleCloseMobileMenu}>Home</Link>

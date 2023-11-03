@@ -22,8 +22,15 @@ const Login = () => {
             console.log(response.data);
         }
         catch (err) {
-            console.log(`Error: ${err.message}`);
-            setErrMsg(err.message);
+            if (!err?.response) {
+                setErrMsg('No response from the server.');
+            } else if (err.response?.status === 400) {
+                setErrMsg('Invalid email or password.');
+            } else if (err.response?.status === 401) {
+                setErrMsg('Unauthorized');
+            } else {
+                setErrMsg('Login failed');
+            }
         }
     };
 

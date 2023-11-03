@@ -1,11 +1,16 @@
+.navmenu {
+    /* flex-grow: 1; */
+    flex-basis: 50%;
+}
+
 .navmenu__menu {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .navmenu-items {
-    margin: 0 60px;
+    /* margin: 0 60px; */
     list-style: none;
     height: 70px;
     display: flex;
@@ -17,7 +22,7 @@
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
-    padding: 5px;
+    padding: 0 5px;
     transition: all .2s ease;
 }
 
