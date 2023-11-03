@@ -1,5 +1,4 @@
 .navmenu {
-    /* flex-grow: 1; */
     flex-basis: 50%;
 }
 
@@ -31,6 +30,10 @@
 }
 
 @media screen and (max-width: 960px) {
+
+    .navmenu {
+        flex-basis: 5%;
+    }
 
     .navmenu__menu {
         position: absolute;

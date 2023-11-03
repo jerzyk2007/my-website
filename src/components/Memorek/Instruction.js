@@ -1,4 +1,4 @@
-import { SlControlPlay, SlUser, SlMagnifier, SlBookOpen, SlList, SlGraduation } from "react-icons/sl";
+import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation } from "react-icons/sl";
 import './Instruction.css';
 
 const Instruction = () => {

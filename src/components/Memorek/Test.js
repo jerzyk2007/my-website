@@ -9,7 +9,7 @@ import './Test.css';
 const Test = () => {
     const navigate = useNavigate();
     const { test } = useContext(DataContext);
-    const [itemTest, setItemTest] = useState(test);
+    const [itemTest] = useState(test);
     const [counter, setCounter] = useState(0);
     const [result, setResult] = useState(false);
 
@@ -37,7 +37,7 @@ const Test = () => {
         if (counter !== 0 && counter === test.length) {
             testResult();
         }
-    }, [counter, itemTest]);
+    }, [counter, itemTest, test]);
 
     return (
         <div className='test'>
