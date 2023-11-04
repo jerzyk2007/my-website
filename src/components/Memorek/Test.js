@@ -15,7 +15,6 @@ const Test = () => {
 
     const testResult = () => {
         setResult(true);
-        console.log('koniec gry');
     };
 
     const handleAnswers = async (id) => {

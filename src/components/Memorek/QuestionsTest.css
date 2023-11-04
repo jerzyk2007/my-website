@@ -8,10 +8,21 @@
     user-select: none;
 }
 
+.questions-test-title {
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 10px;
+}
+
 @media screen and (max-width: 960px) {
 
     .questions-test {
         font-size: .8rem;
+    }
+
+    .questions-test-title {
+        font-size: 1.3rem;
+        padding: 5px;
     }
 }
 
@@ -19,5 +30,9 @@
 
     .questions-test {
         font-size: .7rem;
+    }
+
+    .questions-test-title {
+        font-size: 1rem;
     }
 }
