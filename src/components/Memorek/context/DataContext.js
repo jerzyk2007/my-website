@@ -10,6 +10,7 @@ export const DataProvider = ({ children }) => {
     const [errorMessage, setErrorMessage] = useState('');
     const [collectionsName, setCollectionsName] = useState([]);
     const [LearnOrTest, setLearnOrTest] = useState('learn');
+    const [languageSwitch, setLanguageSwitch] = useState(true);
 
     const fetchPhrases = async (collections) => {
         try {
@@ -48,7 +49,7 @@ export const DataProvider = ({ children }) => {
     }, []);
 
     return (
-        <DataContext.Provider value={{ phrases, test, errorMessage, collectionsName, fetchPhrases, fetchTestPhrases, LearnOrTest, setLearnOrTest }}>
+        <DataContext.Provider value={{ phrases, test, errorMessage, collectionsName, fetchPhrases, fetchTestPhrases, LearnOrTest, setLearnOrTest, languageSwitch, setLanguageSwitch }}>
             {children}
         </DataContext.Provider>
     );

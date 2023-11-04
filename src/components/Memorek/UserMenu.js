@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation } from "react-icons/sl";
+import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation, SlShuffle } from "react-icons/sl";
 import { useContext } from 'react';
 import DataContext from './context/DataContext';
 import './UserMenu.css';
@@ -22,6 +22,7 @@ const UserMenu = () => {
             <Link to="/memorek/collections" className="user-menu-link" >
                 <SlList />
             </Link>
+            <SlShuffle className="user-menu-link" />
             <Link to="/memorek/login" className="user-menu-link" >
                 <SlUser />
             </Link>

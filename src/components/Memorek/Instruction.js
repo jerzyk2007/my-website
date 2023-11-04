@@ -1,4 +1,4 @@
-import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation } from "react-icons/sl";
+import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation, SlShuffle } from "react-icons/sl";
 import './Instruction.css';
 
 const Instruction = () => {
@@ -23,6 +23,10 @@ const Instruction = () => {
             <section className='instruction__icon'>
                 <SlList className="instruction-button" />
                 <span className="instruction-info">Select a vocabulary database</span>
+            </section>
+            <section className='instruction__icon'>
+                <SlShuffle className="instruction-button" />
+                <span className="instruction-info">Language switch</span>
             </section>
             <section className='instruction__icon'>
                 <SlUser className="instruction-button" />
