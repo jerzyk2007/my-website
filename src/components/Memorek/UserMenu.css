@@ -22,8 +22,8 @@
     color: blue;
 }
 
-.user-menu-link:hover,
-.user-menu-button:hover {
+.user-menu-link:active,
+.user-menu-button:active {
     color: red;
 }
 

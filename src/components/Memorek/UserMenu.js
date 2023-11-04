@@ -22,7 +22,7 @@ const UserMenu = () => {
             <Link to="/memorek/collections" className="user-menu-link" >
                 <SlList />
             </Link>
-            <SlShuffle className={languageSwitch ? "user-menu-button" : "user-menu-button user-menu-button--active"} />
+            <SlShuffle className={languageSwitch ? "user-menu-button" : "user-menu-button user-menu-button--active"} onClick={() => setLanguageSwitch(!languageSwitch)} />
             <Link to="/memorek/login" className="user-menu-link" >
                 <SlUser />
             </Link>
