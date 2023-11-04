@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation, SlShuffle } from "react-icons/sl";
 import { useContext } from 'react';
-import DataContext from './context/DataContext';
+import DataContext from './context/DataProvider';
 import './UserMenu.css';
 
 const UserMenu = () => {

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import DataContext from './context/DataContext';
+import DataContext from './context/DataProvider';
 import './AnswersLearn.css';
 
 const Answers = ({ phrase, handleDraw, blink }) => {

@@ -6,10 +6,12 @@ const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
+    const [success, setSuccess] = useState(false);
 
     const userRef = useRef();
 
-    const handleLogin = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
             const response = await axios.post('/login',
                 JSON.stringify({ username, password }),
@@ -18,7 +20,6 @@ const Login = () => {
                     withCredentials: true
                 }
             );
-            // const response = await axios.post('http://localhost:3500/login');
             console.log(response.data);
         }
         catch (err) {
@@ -27,19 +28,16 @@ const Login = () => {
             } else if (err.response?.status === 400) {
                 setErrMsg('Invalid email or password.');
             } else if (err.response?.status === 401) {
-                setErrMsg('Unauthorized');
+                setErrMsg('Unauthorized.');
             } else {
-                setErrMsg('Login failed');
+                setErrMsg('Login failed.');
             }
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        handleLogin();
-    };
-
-
+    useEffect(() => {
+        setErrMsg('');
+    }, [username, password]);
 
     useEffect(() => {
         userRef.current.focus();
@@ -49,7 +47,7 @@ const Login = () => {
         <section className="login">
             <p className="login-error-message">{errMsg ? errMsg : <span style={{ color: "black" }}>Login</span>}</p>
             <form className="login__container" onSubmit={handleSubmit}>
-                <label htmlFor="username" className="login__container-title">Username</label>
+                <label htmlFor="username" className="login__container-title">Username:</label>
                 <input
                     className="login-login"
                     type="text"
@@ -60,7 +58,7 @@ const Login = () => {
                     onChange={(e) => setUsername(e.target.value)}
                     required
                 />
-                <label htmlFor="password" className="login__container-title">Password</label>
+                <label htmlFor="password" className="login__container-title">Password:</label>
                 <input
                     className="login-login"
                     type="password"

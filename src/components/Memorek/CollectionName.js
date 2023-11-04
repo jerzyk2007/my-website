@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
-import DataContext from './context/DataContext';
+import DataContext from './context/DataProvider';
 import { LuLoader } from "react-icons/lu";
 import './CollectionName.css';
 
