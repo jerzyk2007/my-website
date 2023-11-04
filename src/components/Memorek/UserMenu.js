@@ -6,7 +6,7 @@ import './UserMenu.css';
 
 const UserMenu = () => {
 
-    const { LearnOrTest } = useContext(DataContext);
+    const { LearnOrTest, languageSwitch, setLanguageSwitch } = useContext(DataContext);
 
     return (
         <div className="user-menu">
@@ -22,7 +22,7 @@ const UserMenu = () => {
             <Link to="/memorek/collections" className="user-menu-link" >
                 <SlList />
             </Link>
-            <SlShuffle className="user-menu-link" />
+            <SlShuffle className={languageSwitch ? "user-menu-button" : "user-menu-button user-menu-button--active"} />
             <Link to="/memorek/login" className="user-menu-link" >
                 <SlUser />
             </Link>

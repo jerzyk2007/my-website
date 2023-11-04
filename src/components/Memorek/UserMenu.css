@@ -8,7 +8,8 @@
     height: 60px;
 }
 
-.user-menu-link {
+.user-menu-link,
+.user-menu-button {
     font-size: 1.8rem;
     color: #fff;
     flex-grow: 1;
@@ -17,6 +18,11 @@
     align-items: center;
 }
 
+.user-menu-button--active {
+    color: blue;
+}
+
+.user-menu-link:hover,
 .user-menu-button:hover {
     color: red;
 }
