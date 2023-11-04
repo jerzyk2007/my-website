@@ -14,7 +14,8 @@ export const DataProvider = ({ children }) => {
 
     const fetchPhrases = async (collections) => {
         try {
-            const response = await api.get(`/phrases/learn/${collections}`);
+            const URL = languageSwitch ? "/phrases/learn/normal/" : "/phrases/learn/reverse/";
+            const response = await api.get(`${URL}${collections}`);
             setPhrases(response.data);
         }
         catch (err) {
@@ -25,7 +26,8 @@ export const DataProvider = ({ children }) => {
 
     const fetchTestPhrases = async (collections) => {
         try {
-            const response = await api.get(`/phrases/test/${collections}`);
+            const URL = languageSwitch ? "/phrases/test/normal/" : "/phrases/test/reverse/";
+            const response = await api.get(`${URL}${collections}`);
             setTest(response.data);
         }
         catch (err) {
@@ -33,6 +35,11 @@ export const DataProvider = ({ children }) => {
             setErrorMessage(`Error: ${err.message}`);
         }
     };
+
+    useEffect(() => {
+        setPhrases([]);
+        setTest([]);
+    }, [languageSwitch]);
 
     useEffect(() => {
         const fetchCollectionsName = async () => {
