@@ -1,20 +1,20 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import useAuth from "./hooks/useData";
+import useData from "./hooks/useData";
 import axios from './api/axios';
 import Instruction from "./Instruction";
 import './Login.css';
 
 const Login = () => {
-    const userRef = useRef();
+    const { auth, setAuth, successAuth, setSuccessAuth, changeMenu, setChangeMenu } = useData();
+    const navigate = useNavigate();
 
-    const { auth, setAuth, successAuth, setSuccessAuth, changeMenu, setChangeMenu } = useAuth();
+    const userRef = useRef();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
 
-    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();

@@ -1,9 +1,9 @@
-import { useLocation, useNavigate, Outlet } from "react-router-dom";
+import { useLocation, useNavigate, Outlet, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import useAuth from "./hooks/useData";
 import Login from './Login';
 
-const RequireAuth = () => {
+const RequireAuth = ({ allowedRoles }) => {
     const { auth } = useAuth();
     const navigate = useNavigate();
 
@@ -14,9 +14,9 @@ const RequireAuth = () => {
     }, [auth, navigate]);
 
     return (
-        auth?.username
+        auth?.roles?.find(role => allowedRoles?.includes(role))
             ? <Outlet />
-            : <Login />
+            : <Navigate to='/memorek' />
     );
 
 };

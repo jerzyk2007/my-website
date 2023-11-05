@@ -21,7 +21,7 @@ const Board = () => {
                 <Route path='login' element={<Login />} />
 
                 {/* protected routes */}
-                <Route element={<RequireAuth />}>
+                <Route element={<RequireAuth allowedRoles={[100, 200]} />}>
                     <Route path='search' element={<Search />} />
                 </Route>
 

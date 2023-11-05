@@ -1,9 +1,9 @@
-import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation, SlShuffle, SlMagnifier, SlShareAlt, SlUserUnfollow, SlActionUndo, SlActionRedo } from "react-icons/sl";
+import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation, SlShuffle, SlMagnifier, SlShareAlt, SlUserUnfollow, SlActionUndo, SlActionRedo, SlUserFollow } from "react-icons/sl";
 import useData from "./hooks/useData";
 import './Instruction.css';
 
 const Instruction = () => {
-    const { changeMenu } = useData();
+    const { changeMenu, auth } = useData();
 
     return (
         <>
@@ -40,13 +40,15 @@ const Instruction = () => {
                 </div> :
                 <div className="instruction">
                     <h2 className="instruction-title">Instruction</h2>
-                    <p className='instruction-text'>
+                    {!auth?.roles?.includes(200) ? <p className='instruction-text'>
                         As a logged-in user, you have the ability to add new data, make corrections, and delete. Please remember that the maximum collection capacity is 50 items.
                     </p>
-                    <section className='instruction__icon'>
+                        : <p> As a Admin, you have the ability to add new data, make corrections, and delete. Please remember that the maximum collection capacity is 50 items.
+                            You can also add new users.</p>}
+                    {!auth?.roles?.includes(200) && <section className='instruction__icon'>
                         <SlBookOpen className="instruction-button" />
                         <span className="instruction-info">Instruction.</span>
-                    </section>
+                    </section>}
                     <section className='instruction__icon'>
                         <SlMagnifier className="instruction-button" />
                         <span className="instruction-info">Find and make changes.</span>
@@ -59,6 +61,10 @@ const Instruction = () => {
                         <SlUserUnfollow className="instruction-button" />
                         <span className="instruction-info">Log out or change password.</span>
                     </section>
+                    {auth?.roles?.includes(200) && <section className='instruction__icon'>
+                        <SlUserFollow className="instruction-button" />
+                        <span className="instruction-info">Add new user.</span>
+                    </section>}
                     <section className='instruction__icon'>
                         <SlActionRedo className="instruction-button" />
                         <SlActionUndo className="instruction-button" />
