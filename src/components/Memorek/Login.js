@@ -34,7 +34,7 @@ const Login = () => {
             setSuccessAuth(true);
             setChangeMenu(!changeMenu);
             navigate('/memorek');
-            console.log(JSON.stringify(response.data));
+            // console.log(JSON.stringify(response.data));
         }
         catch (err) {
             if (!err?.response) {
