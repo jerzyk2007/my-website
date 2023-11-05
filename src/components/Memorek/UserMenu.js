@@ -32,7 +32,7 @@ const UserMenu = () => {
                 ? <SlShuffle className={languageSwitch
                     ? "user-menu-button" : "user-menu-button user-menu-button--active"} onClick={() => setLanguageSwitch(!languageSwitch)} />
                 : <SlUserUnfollow className="user-menu-button" />}
-            {auth?.roles?.includes(200) && <Link to="/memorek/collections" className="user-menu-link" >
+            {auth?.roles?.includes(200) && <Link to="/memorek/register" className="user-menu-link" >
                 <SlUserFollow />
             </Link>}
             {!successAuth

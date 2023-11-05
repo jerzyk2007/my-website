@@ -6,6 +6,7 @@ import Instruction from './Instruction';
 import Test from './Test';
 import Login from './Login';
 import Search from './Search';
+import Register from './Register';
 import './Board.css';
 
 const Board = () => {
@@ -23,6 +24,9 @@ const Board = () => {
                 {/* protected routes */}
                 <Route element={<RequireAuth allowedRoles={[100, 200]} />}>
                     <Route path='search' element={<Search />} />
+                </Route>
+                <Route element={<RequireAuth allowedRoles={[200]} />}>
+                    <Route path='register' element={<Register />} />
                 </Route>
 
                 {/* all other */}
