@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import useRefreshToken from "./useRefreshToken";
 import useData from "./useData";
 
+
 const useAxiosPrivate = () => {
     const refresh = useRefreshToken();
     const { auth } = useData();
@@ -18,7 +19,7 @@ const useAxiosPrivate = () => {
             }, (error) => Promise.reject(error)
         );
 
-        const responseInterceptors = axiosPrivate.interceptors.response.use(
+        const responseIntercept = axiosPrivate.interceptors.response.use(
             response => response,
             async (error) => {
                 const prevRequest = error?.config;
@@ -33,7 +34,7 @@ const useAxiosPrivate = () => {
         );
         return () => {
             axiosPrivate.interceptors.request.eject(requestIntercept);
-            axiosPrivate.interceptors.response.eject(responseInterceptors);
+            axiosPrivate.interceptors.response.eject(responseIntercept);
         };
     }, [auth, refresh]);
 
@@ -41,3 +42,4 @@ const useAxiosPrivate = () => {
 };
 
 export default useAxiosPrivate;
+

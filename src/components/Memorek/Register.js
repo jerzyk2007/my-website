@@ -1,31 +1,32 @@
 import { useEffect, useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import useData from "./hooks/useData";
-import axiosPrivate from "./api/axios";
+import useAxiosPrivate from "./hooks/useAxiosPrivate";
 import './Register.css';
 
 const Register = () => {
-    const { auth, setAuth, successAuth, setSuccessAuth, changeMenu, setChangeMenu } = useData();
 
     const userRef = useRef();
+    const axiosPrivate = useAxiosPrivate();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
+    const [registeSuccess, setRegisterSuccess] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axiosPrivate.post('/register',
+
                 JSON.stringify({ username, password }),
                 {
                     headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
+                    withCredentials: true,
                 }
             );
             setUsername('');
             setPassword('');
-            console.log(JSON.stringify(response.data));
+            setRegisterSuccess(response.data);
+
         }
         catch (err) {
             if (!err?.response) {
@@ -34,6 +35,8 @@ const Register = () => {
                 setErrMsg('Invalid username or password.');
             } else if (err.response?.status === 401) {
                 setErrMsg('Unauthorized.');
+            } else if (err.response?.status === 409) {
+                setErrMsg('User is existing in database.');
             } else {
                 setErrMsg('Register failed.');
             }
@@ -50,7 +53,7 @@ const Register = () => {
 
     return (
         <section className="register">
-            <p className="register-error-message">{errMsg ? errMsg : <span style={{ color: "black" }}>Register</span>}</p>
+            <p className="register-error-message">{errMsg ? errMsg : registeSuccess ? registeSuccess : <span style={{ color: "black" }}>Register</span>}</p>
             <form className="register__container" onSubmit={handleSubmit}>
                 <label htmlFor="username" className="register__container-title">Username:</label>
                 <input
