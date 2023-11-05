@@ -1,10 +1,9 @@
-import { useContext } from 'react';
-import DataContext from './context/DataProvider';
+import useData from './hooks/useData';
 import './Collections.css';
 import CollectionName from './CollectionName';
 
 const Collections = () => {
-    const { collectionsName } = useContext(DataContext);
+    const { collectionsName } = useData();
     const collectionElements = collectionsName.map((element, index) => (
         <CollectionName key={index} name={element} />
     ));

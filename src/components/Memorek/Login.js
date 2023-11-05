@@ -1,14 +1,18 @@
 import { useEffect, useState, useRef } from "react";
+import useAuth from "./hooks/useData";
 import axios from './api/axios';
+import AuthInstruction from "./AuthInstruction";
 import './Login.css';
 
 const Login = () => {
+    const userRef = useRef();
+
+    const { auth, setAuth } = useAuth();
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
-
-    const userRef = useRef();
+    const [successAuth, setSuccessAuth] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,13 +24,19 @@ const Login = () => {
                     withCredentials: true
                 }
             );
-            console.log(response.data);
+            const accessToken = response?.data?.accessToken;
+            const roles = response?.data?.roles;
+            setAuth({ username, password, roles, accessToken });
+            setUsername('');
+            setPassword('');
+            setSuccessAuth(true);
+            console.log(JSON.stringify(response.data));
         }
         catch (err) {
             if (!err?.response) {
-                setErrMsg('No response from the server.');
+                setErrMsg('No server response.');
             } else if (err.response?.status === 400) {
-                setErrMsg('Invalid email or password.');
+                setErrMsg('Invalid username or password.');
             } else if (err.response?.status === 401) {
                 setErrMsg('Unauthorized.');
             } else {
@@ -44,7 +54,7 @@ const Login = () => {
     }, []);
 
     return (
-        <section className="login">
+        !successAuth ? (<section className="login">
             <p className="login-error-message">{errMsg ? errMsg : <span style={{ color: "black" }}>Login</span>}</p>
             <form className="login__container" onSubmit={handleSubmit}>
                 <label htmlFor="username" className="login__container-title">Username:</label>
@@ -70,8 +80,9 @@ const Login = () => {
                 />
                 <button className="login-button">Login</button>
             </form>
-        </section>
+        </section>) : <AuthInstruction />
     );
+
 };
 
 export default Login;

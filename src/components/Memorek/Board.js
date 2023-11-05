@@ -1,3 +1,4 @@
+import RequireAuth from './RequireAuth';
 import { Routes, Route } from 'react-router-dom';
 import Learn from './Learn';
 import Collections from './Collections';
@@ -12,6 +13,10 @@ const Board = () => {
         <div className='board'>
             <Routes>
                 <Route path='/' element={<Instruction />} />
+                {/* <Route element={<RequireAuth />}>
+                    <Route path='learn' element={<Learn />} />
+                    <Route path='collections' element={<Collections />} />
+                </Route> */}
                 <Route path='learn' element={<Learn />} />
                 <Route path='collections' element={<Collections />} />
                 <Route path='test' element={<Test />} />

@@ -1,13 +1,13 @@
-import { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import DataContext from './context/DataProvider';
+import useData from './hooks/useData';
 import Questions from './QuestionsLearn';
 import Answers from './AnswersLearn';
 import './Learn.css';
 
 
 const Learn = () => {
-    const { phrases } = useContext(DataContext);
+    const { phrases } = useData();
     const [phrase, setPhrase] = useState('');
     const [blink, setBlink] = useState(true);
     const navigate = useNavigate();

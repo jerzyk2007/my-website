@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
+import useData from './hooks/useData';
 import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation, SlShuffle } from "react-icons/sl";
-import { useContext } from 'react';
-import DataContext from './context/DataProvider';
+
 import './UserMenu.css';
 
 const UserMenu = () => {
 
-    const { LearnOrTest, languageSwitch, setLanguageSwitch } = useContext(DataContext);
+    const { LearnOrTest, languageSwitch, setLanguageSwitch } = useData();
 
     return (
         <div className="user-menu">

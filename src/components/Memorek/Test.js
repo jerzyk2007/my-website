@@ -1,17 +1,17 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import DataContext from './context/DataProvider';
+import useData from './hooks/useData';
 import QuestionsTest from './QuestionsTest';
 import AnswersTest from './AnswersTest';
 import TestResult from './TestResult';
 import './Test.css';
 
 const Test = () => {
-    const navigate = useNavigate();
-    const { test } = useContext(DataContext);
+    const { test } = useData();
     const [itemTest] = useState(test);
     const [counter, setCounter] = useState(0);
     const [result, setResult] = useState(false);
+    const navigate = useNavigate();
 
     const testResult = () => {
         setResult(true);

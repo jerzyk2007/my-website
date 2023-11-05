@@ -1,7 +1,7 @@
-import './Memorek.css';
+import { DataProvider } from "./context/DataProvider";
 import UserMenu from "./UserMenu";
 import Board from "./Board";
-import { DataProvider } from "./context/DataProvider";
+import './Memorek.css';
 
 const Memorek = () => {
 

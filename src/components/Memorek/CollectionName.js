@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
-import DataContext from './context/DataProvider';
+import { useState } from 'react';
+import useData from './hooks/useData';
 import { LuLoader } from "react-icons/lu";
 import './CollectionName.css';
 
 const CollectionName = ({ name }) => {
-    const { fetchPhrases, setLearnOrTest, fetchTestPhrases } = useContext(DataContext);
+    const { fetchPhrases, setLearnOrTest, fetchTestPhrases } = useData();
     const [isLoading, setIseLoading] = useState(false);
     const navigate = useNavigate();
 
