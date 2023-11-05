@@ -5,22 +5,20 @@ import Login from './Login';
 
 const RequireAuth = () => {
     const { auth } = useAuth();
-    const location = useLocation();
     const navigate = useNavigate();
-
 
     useEffect(() => {
         if (!auth?.username) {
-            navigate('/memorek/login', { state: { from: location }, replace: true });
+            navigate('/memorek/login');
         }
-    }, [auth, location, navigate]);
+    }, [auth, navigate]);
 
     return (
         auth?.username
             ? <Outlet />
             : <Login />
-
     );
+
 };
 
 export default RequireAuth;
