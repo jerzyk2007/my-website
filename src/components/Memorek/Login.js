@@ -1,18 +1,17 @@
 import { useEffect, useState, useRef } from "react";
 import useAuth from "./hooks/useData";
 import axios from './api/axios';
-import AuthInstruction from "./AuthInstruction";
+import Instruction from "./Instruction";
 import './Login.css';
 
 const Login = () => {
     const userRef = useRef();
 
-    const { auth, setAuth } = useAuth();
+    const { auth, setAuth, successAuth, setSuccessAuth, changeMenu, setChangeMenu } = useAuth();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
-    const [successAuth, setSuccessAuth] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,6 +29,7 @@ const Login = () => {
             setUsername('');
             setPassword('');
             setSuccessAuth(true);
+            setChangeMenu(!changeMenu);
             console.log(JSON.stringify(response.data));
         }
         catch (err) {
@@ -80,7 +80,7 @@ const Login = () => {
                 />
                 <button className="login-button">Login</button>
             </form>
-        </section>) : <AuthInstruction />
+        </section>) : <Instruction />
     );
 
 };

@@ -1,7 +1,7 @@
 import { useLocation, useNavigate, Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import useAuth from "./hooks/useData";
-import Login from "./Login";
+import Instruction from './Instruction';
 
 const RequireAuth = () => {
     const { auth } = useAuth();
@@ -18,7 +18,7 @@ const RequireAuth = () => {
     return (
         auth?.username
             ? <Outlet />
-            : <Login />
+            : <Instruction />
     );
 };
 
