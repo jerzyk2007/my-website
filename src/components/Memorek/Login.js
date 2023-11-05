@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import useAuth from "./hooks/useData";
 import axios from './api/axios';
 import Instruction from "./Instruction";
@@ -12,6 +13,8 @@ const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
+
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,6 +33,7 @@ const Login = () => {
             setPassword('');
             setSuccessAuth(true);
             setChangeMenu(!changeMenu);
+            navigate('/memorek');
             console.log(JSON.stringify(response.data));
         }
         catch (err) {

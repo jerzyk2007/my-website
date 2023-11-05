@@ -36,7 +36,8 @@ const UserMenu = () => {
             {!successAuth ? < Link to="/memorek/login" className="user-menu-link" >
                 <SlUserFollowing />
             </Link> :
-                changeMenu ? <SlActionUndo className="user-menu-button" onClick={() => setChangeMenu(!changeMenu)} /> : <SlActionRedo className="user-menu-button" onClick={() => setChangeMenu(!changeMenu)} />}
+                changeMenu ? <SlActionUndo className="user-menu-button" onClick={() => setChangeMenu(!changeMenu)} />
+                    : <SlActionRedo className="user-menu-button" onClick={() => setChangeMenu(!changeMenu)} />}
         </div >
     );
 };

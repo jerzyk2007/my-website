@@ -1,6 +1,6 @@
 import axios from "axios";
-const BASE_URL = 'https://salty-badlands-34718-49e2594dd237.herokuapp.com';
-// const BASE_URL = 'http://localhost:3500';
+// const BASE_URL = 'https://salty-badlands-34718-49e2594dd237.herokuapp.com';
+const BASE_URL = 'http://localhost:3500';
 
 export default axios.create({
     baseURL: BASE_URL
