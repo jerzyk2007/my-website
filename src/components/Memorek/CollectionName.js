@@ -37,7 +37,7 @@ const CollectionName = ({ name }) => {
             <button className='collection-name-button' onClick={handleLearn}>Learn</button>
             <button className='collection-name-button collection-name-button--test' onClick={handleTest}>Test</button>
             {isLoading && <div className='collection-name__loading'>
-                <p className='collection-name__loading-title'>Data is loading...</p>
+                <p className='collection-name__loading-title'>Please wait...</p>
                 <LuLoader className='collection-name__loading-icon' />
             </div>}
         </div>
