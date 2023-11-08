@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 import useData from './hooks/useData';
 import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation, SlShuffle, SlActionUndo, SlActionRedo, SlMagnifier, SlShareAlt, SlSettings } from "react-icons/sl";
 
 import './UserMenu.css';
 
 const UserMenu = () => {
-    const { LearnOrTest, languageSwitch, setLanguageSwitch, auth, successAuth, changeMenu, setChangeMenu } = useData();
+    const { LearnOrTest, languageSwitch, setLanguageSwitch, successAuth, changeMenu, setChangeMenu } = useData();
 
     return (
         <div className="user-menu">
@@ -31,7 +30,7 @@ const UserMenu = () => {
                 ? <SlShuffle className={languageSwitch
                     ? "user-menu-button" : "user-menu-button user-menu-button--active"} onClick={() => setLanguageSwitch(!languageSwitch)} />
                 :
-                auth?.roles?.includes(200) && <Link to="/memorek/register" className="user-menu-link" >
+                <Link to="/memorek/user-settings" className="user-menu-link" >
                     <SlSettings />
                 </Link>}
             {!successAuth

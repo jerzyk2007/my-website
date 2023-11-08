@@ -39,10 +39,9 @@
     margin: 5px 0;
     padding: 5px 2px;
     border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 2px 2px rgb(106, 132, 134);
     font-size: 1.1rem;
-    background-color: #fff;
-    /* background-color: rgb(215, 250, 211); */
-
 }
 
 .login-error-message {
@@ -63,15 +62,17 @@
 .login-button {
     padding: 10px;
     border-radius: 10px;
+    border: none;
     font-size: 1rem;
-    background-color: rgb(255, 255, 255);
     width: 50%;
     margin: 20px auto 0px;
+    box-shadow: 2px 2px 2px 2px rgb(106, 132, 134);
+    background-color: rgb(127, 240, 134);
 }
 
 .login-button:active {
-    background-color: rgb(193, 250, 187);
-
+    background-color: rgb(22, 171, 81);
+    color: #fff;
 }
 
 .login-close-button {
@@ -79,7 +80,7 @@
     top: 0;
     right: 0;
     color: red;
-    font-size: 40px;
+    font-size: 2.5rem;
     border: 2px solid red;
     border-radius: 50%;
     cursor: pointer;
