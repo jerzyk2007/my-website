@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import useData from './hooks/useData';
-import { SlControlPlay, SlUserFollowing, SlBookOpen, SlList, SlGraduation, SlShuffle, SlActionUndo, SlActionRedo, SlMagnifier, SlNote, SlShareAlt, SlUserUnfollow, SlUserFollow } from "react-icons/sl";
+import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation, SlShuffle, SlActionUndo, SlActionRedo, SlMagnifier, SlShareAlt, SlSettings } from "react-icons/sl";
 
 import './UserMenu.css';
 
@@ -10,11 +10,9 @@ const UserMenu = () => {
 
     return (
         <div className="user-menu">
-            {changeMenu ? !auth?.roles?.includes(200) && <Link to="/memorek/" className="user-menu-link">
+            <Link to="/memorek/" className="user-menu-link">
                 <SlBookOpen />
-            </Link> : !auth?.roles?.includes(200) && <Link to="/memorek/" className="user-menu-link">
-                <SlBookOpen />
-            </Link>}
+            </Link>
             {LearnOrTest === 'learn' && changeMenu && <Link to="/memorek/learn" className="user-menu-link" >
                 <SlControlPlay />
             </Link>}
@@ -32,13 +30,13 @@ const UserMenu = () => {
             {changeMenu
                 ? <SlShuffle className={languageSwitch
                     ? "user-menu-button" : "user-menu-button user-menu-button--active"} onClick={() => setLanguageSwitch(!languageSwitch)} />
-                : <SlUserUnfollow className="user-menu-button" />}
-            {auth?.roles?.includes(200) && <Link to="/memorek/register" className="user-menu-link" >
+                : <SlSettings className="user-menu-button" />}
+            {/* {auth?.roles?.includes(200) && <Link to="/memorek/register" className="user-menu-link" >
                 <SlUserFollow />
-            </Link>}
+            </Link>} */}
             {!successAuth
                 ? < Link to="/memorek/login" className="user-menu-link" >
-                    <SlUserFollowing />
+                    <SlUser />
                 </Link>
                 : changeMenu
                     ? <SlActionUndo className="user-menu-button" onClick={() => setChangeMenu(!changeMenu)} />
