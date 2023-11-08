@@ -19,6 +19,7 @@
 
 .user-settings-link {
     width: 70%;
+    text-decoration: none;
 }
 
 .user-settings-button {
@@ -30,7 +31,7 @@
     border: none;
     box-shadow: 2px 2px 2px 2px rgb(106, 132, 134);
     background-color: rgb(127, 240, 134);
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
 }
 
@@ -53,11 +54,8 @@
 
 @media screen and (max-width: 360px) {
 
-    .questions-test {
-        font-size: .7rem;
-    }
-
-    .questions-test-title {
+    .user-settings-button {
         font-size: 1rem;
+        padding: 10px 0;
     }
 }

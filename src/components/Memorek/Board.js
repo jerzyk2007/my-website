@@ -8,6 +8,8 @@ import Login from './Login';
 import Search from './Search';
 import Register from './Register';
 import UserSettings from './UserSettings';
+import AddData from './AddData';
+import ChangeUserName from './ChangeUserName';
 import './Board.css';
 
 const Board = () => {
@@ -28,6 +30,12 @@ const Board = () => {
                 </Route>
                 <Route element={<RequireAuth allowedRoles={[100, 200]} />}>
                     <Route path='user-settings' element={<UserSettings />} />
+                </Route>
+                <Route element={<RequireAuth allowedRoles={[100]} />}>
+                    <Route path='add-data' element={<AddData />} />
+                </Route>
+                <Route element={<RequireAuth allowedRoles={[100]} />}>
+                    <Route path='user-settings/username' element={<ChangeUserName />} />
                 </Route>
                 <Route element={<RequireAuth allowedRoles={[200]} />}>
                     <Route path='user-settings/register' element={<Register />} />

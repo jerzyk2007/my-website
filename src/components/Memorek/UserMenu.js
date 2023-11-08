@@ -23,7 +23,7 @@ const UserMenu = () => {
             </Link>}
             {changeMenu ? <Link to="/memorek/collections" className="user-menu-link" >
                 <SlList />
-            </Link> : <Link to="/memorek/collections" className="user-menu-link" >
+            </Link> : <Link to="/memorek/add-data" className="user-menu-link" >
                 <SlShareAlt />
             </Link>}
             {changeMenu

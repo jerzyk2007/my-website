@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router";
+import useData from './hooks/useData';
 import { Link } from 'react-router-dom';
 import { FiX } from "react-icons/fi";
-import useData from './hooks/useData';
+import Register from './Register';
 import './UserSettings.css';
 
 const UserSettings = () => {

@@ -42,7 +42,7 @@ const Register = () => {
                 setErrMsg("Invalid entry");
                 return;
             }
-            const response = await axiosPrivate.post('/register',
+            const response = await axiosPrivate.post('/user/register',
 
                 JSON.stringify({ username, password }),
                 {
@@ -139,6 +139,7 @@ const Register = () => {
                             className="register-text"
                             type="password"
                             id="password"
+                            autoComplete="off"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
@@ -160,6 +161,7 @@ const Register = () => {
                             className="register-text"
                             type="password"
                             id="confirm_password"
+                            autoComplete="off"
                             value={matchPassword}
                             onChange={(e) => setMatchPassword(e.target.value)}
                             required
