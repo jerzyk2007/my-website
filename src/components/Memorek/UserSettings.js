@@ -16,12 +16,18 @@ const UserSettings = () => {
         <section className='user-settings'>
             {auth?.roles?.includes(200) &&
                 <Link to="/memorek/user-settings/register" className="user-settings-link" >
-
                     <button className="user-settings-button" onClick={handleClick} >Register new user</button>
                 </Link>}
-            <button className="user-settings-button" >Change user name</button>
-            <button className="user-settings-button" >Change password</button>
-            <button className="user-settings-button" >Log out</button>
+            <Link to="/memorek/user-settings/username" className="user-settings-link" >
+                <button className="user-settings-button" >Change user name</button>
+            </Link>
+            <Link to="/memorek/user-settings/changepass" className="user-settings-link" >
+                <button className="user-settings-button" >Change password</button>
+            </Link>
+            <Link to="/memorek/user-settings/logout" className="user-settings-link" >
+                <button className="user-settings-button" >Log out</button>
+            </Link>
+
             <FiX className='user-settings-close-button' onClick={() => navigate(-1)} />
         </section>
     );
