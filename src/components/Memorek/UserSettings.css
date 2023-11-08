@@ -17,9 +17,13 @@
     align-items: center;
 }
 
+.user-settings-link {
+    width: 70%;
+}
+
 .user-settings-button {
     display: block;
-    min-width: 70%;
+    width: 100%;
     margin: 20px auto;
     padding: 20px 0;
     border-radius: 20px;

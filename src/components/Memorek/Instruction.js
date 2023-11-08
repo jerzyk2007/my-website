@@ -59,7 +59,7 @@ const Instruction = () => {
                     </section>
                     {!auth?.roles?.includes(200) && <section className='instruction__icon'>
                         <SlSettings className="instruction-button" />
-                        <span className="instruction-info">Log out or change password.</span>
+                        <span className="instruction-info">Log out, change password or edit user name.</span>
                     </section>}
                     {auth?.roles?.includes(200) && <section className='instruction__icon'>
                         <SlSettings className="instruction-button" />

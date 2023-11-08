@@ -30,7 +30,7 @@ const Board = () => {
                     <Route path='user-settings' element={<UserSettings />} />
                 </Route>
                 <Route element={<RequireAuth allowedRoles={[200]} />}>
-                    <Route path='register' element={<Register />} />
+                    <Route path='user-settings/register' element={<Register />} />
                 </Route>
 
                 {/* all other */}
