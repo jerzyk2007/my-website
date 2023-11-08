@@ -1,4 +1,4 @@
-.collection-name {
+.collection_name {
     padding: 10px;
     display: flex;
     align-items: center;
@@ -6,12 +6,12 @@
     user-select: none;
 }
 
-.collection-name-title {
+.collection_name-title {
     flex-grow: 1;
     font-size: 1.2rem;
 }
 
-.collection-name-button {
+.collection_name-button {
     padding: 10px;
     border-radius: 10px;
     border: 0px;
@@ -23,11 +23,11 @@
     font-weight: bold;
 }
 
-.collection-name-button--test {
+.collection_name-button--test {
     background: rgb(71, 239, 91);
 }
 
-.collection-name__loading {
+.collection_name__loading {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -45,7 +45,7 @@
     border: 2px solid black;
 }
 
-.collection-name__loading-icon {
+.collection_name__loading-icon {
     margin-top: 10px;
     font-size: 1.8rem;
     animation: loading 3s linear infinite;
@@ -63,11 +63,11 @@
 
 @media screen and (max-width: 360px) {
 
-    .collection-name-title {
+    .collection_name-title {
         font-size: 1rem;
     }
 
-    .collection-name-button {
+    .collection_name-button {
         padding: 5px;
         font-size: .8rem;
         margin: 0 5px;

@@ -4,14 +4,14 @@ import './TestResult.css';
 const TestResult = ({ itemTest }) => {
     const [result, setResult] = useState(0);
 
-    const showAnswers = itemTest.map((item, index) => item.correct === item.selected ? <section key={index} className="test-result_container">
-        <p className="test-result-question">{item.question}</p>
-        <p className="test-result-answer--correct">{item.answers[item.correct]}</p>
+    const showAnswers = itemTest.map((item, index) => item.correct === item.selected ? <section key={index} className="test_result_container">
+        <p className="test_result-question">{item.question}</p>
+        <p className="test_result-answer--correct">{item.answers[item.correct]}</p>
     </section> :
-        <section key={index} className="test-result_container">
-            <p className="test-result-question">{item.question}</p>
-            <p className="test-result-answer--correct">{item.answers[item.correct]}</p>
-            <p className="test-result-answer">{item.answers[item.selected]}</p>
+        <section key={index} className="test_result__container">
+            <p className="test_result-question">{item.question}</p>
+            <p className="test_result-answer--correct">{item.answers[item.correct]}</p>
+            <p className="test_result-answer">{item.answers[item.selected]}</p>
         </section>
     );
 
@@ -26,8 +26,8 @@ const TestResult = ({ itemTest }) => {
     }, [itemTest]);
 
     return (
-        <div className="test-result">
-            <h2 className="test-result-title">Twój wynik {result}/{itemTest.length}</h2>
+        <div className="test_result">
+            <h2 className="test_result-title">Twój wynik {result}/{itemTest.length}</h2>
             {showAnswers}
         </div>
     );

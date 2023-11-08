@@ -1,10 +1,8 @@
-.user-settings {
+.user_settings {
     position: relative;
-    /* min-height: 40%; */
     width: 100%;
     max-width: 100%;
     margin: auto 5px;
-    /* padding: 1.2rem; */
     background-color: rgb(193, 250, 187);
     font-family: 'Nunito', sans-serif;
     font-size: 1.2rem;
@@ -17,12 +15,12 @@
     align-items: center;
 }
 
-.user-settings-link {
+.user_settings-link {
     width: 70%;
     text-decoration: none;
 }
 
-.user-settings-button {
+.user_settings-button {
     display: block;
     width: 100%;
     margin: 20px auto;
@@ -35,12 +33,12 @@
     cursor: pointer;
 }
 
-.user-settings-button:active {
+.user_settings-button:active {
     background-color: rgb(22, 171, 81);
     color: #fff;
 }
 
-.user-settings-close-button {
+.user_settings-close-button {
     position: absolute;
     top: 0;
     right: 0;
@@ -54,7 +52,7 @@
 
 @media screen and (max-width: 360px) {
 
-    .user-settings-button {
+    .user_settings-button {
         font-size: 1rem;
         padding: 10px 0;
     }

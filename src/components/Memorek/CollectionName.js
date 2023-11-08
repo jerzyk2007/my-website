@@ -32,13 +32,13 @@ const CollectionName = ({ name }) => {
     };
 
     return (
-        <div className="collection-name">
-            <p className='collection-name-title'>{name}</p>
-            <button className='collection-name-button' onClick={handleLearn}>Learn</button>
-            <button className='collection-name-button collection-name-button--test' onClick={handleTest}>Test</button>
-            {isLoading && <div className='collection-name__loading'>
-                <p className='collection-name__loading-title'>Please wait...</p>
-                <LuLoader className='collection-name__loading-icon' />
+        <div className="collection_name">
+            <p className='collection_name-title'>{name}</p>
+            <button className='collection_name-button' onClick={handleLearn}>Learn</button>
+            <button className='collection_name-button collection_name-button--test' onClick={handleTest}>Test</button>
+            {isLoading && <div className='collection_name__loading'>
+                <p className='collection_name__loading-title'>Please wait...</p>
+                <LuLoader className='collection_name__loading-icon' />
             </div>}
         </div>
     );

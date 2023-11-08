@@ -1,4 +1,4 @@
-.user-menu {
+.user_menu {
     position: sticky;
     bottom: 0;
     background-color: rgb(92, 201, 87);
@@ -8,8 +8,8 @@
     height: 60px;
 }
 
-.user-menu-link,
-.user-menu-button {
+.user_menu-link,
+.user_menu-button {
     font-size: 1.8rem;
     color: #fff;
     flex-grow: 1;
@@ -18,23 +18,23 @@
     align-items: center;
 }
 
-.user-menu-button--active {
+.user_menu-button--active {
     color: blue;
 }
 
-.user-menu-link:active,
-.user-menu-button:active {
+.user_menu-link:active,
+.user_menu-button:active {
     color: red;
 }
 
 @media screen and (max-width: 300px) {
 
-    .user-menu {
+    .user_menu {
         height: 50px;
     }
 
-    .user-menu-link,
-    .user-menu-button {
+    .user_menu-link,
+    .user_menu-button {
         font-size: 1.5rem;
 
     }
