@@ -30,10 +30,10 @@ const UserMenu = () => {
             {changeMenu
                 ? <SlShuffle className={languageSwitch
                     ? "user-menu-button" : "user-menu-button user-menu-button--active"} onClick={() => setLanguageSwitch(!languageSwitch)} />
-                : <SlSettings className="user-menu-button" />}
-            {/* {auth?.roles?.includes(200) && <Link to="/memorek/register" className="user-menu-link" >
-                <SlUserFollow />
-            </Link>} */}
+                :
+                auth?.roles?.includes(200) && <Link to="/memorek/register" className="user-menu-link" >
+                    <SlSettings />
+                </Link>}
             {!successAuth
                 ? < Link to="/memorek/login" className="user-menu-link" >
                     <SlUser />
