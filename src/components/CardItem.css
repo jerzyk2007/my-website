@@ -39,6 +39,7 @@
     border: 2px solid red;
     border-radius: 50%;
     cursor: pointer;
+    margin: 5px;
 }
 
 .card-item__item__item-pic {

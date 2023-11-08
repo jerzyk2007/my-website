@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import useAxiosPrivate from "./hooks/useAxiosPrivate";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FiX } from "react-icons/fi";
 import './Register.css';
 
 const Register = () => {
@@ -171,6 +172,7 @@ const Register = () => {
                         </p>
                         <button className="register-button" disabled={!validUsername || !validPassword || !validMatchPassword}>Register</button>
                     </form>
+                    <FiX className='register-close-button' onClick={() => navigate(-1)} />
                 </section>)}
         </>
     );
