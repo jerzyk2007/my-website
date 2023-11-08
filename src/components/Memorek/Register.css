@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.register-title {
+    font-size: 1.7rem;
+}
+
 .register__container {
     display: flex;
     flex-direction: column;
@@ -27,10 +31,31 @@
 .register__container-title {
     font-size: .8rem;
     margin-top: 20px;
-
 }
 
-.register-register {
+.register__container-title--valid {
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 1px 3px;
+    color: rgb(75, 130, 241);
+    margin-left: 0.25rem;
+    font-size: 1rem;
+}
+
+.register__container-title--invalid {
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 1px 3px;
+    color: red;
+    margin-left: 0.25rem;
+    font-size: 1rem;
+}
+
+.register__container-title--hide {
+    display: none;
+}
+
+.register-text {
     margin: 5px 0;
     padding: 5px 2px;
     border-radius: 5px;
@@ -40,10 +65,30 @@
 
 }
 
+
 .register-error-message {
     color: red;
     text-align: center;
     font-weight: bold;
+    font-size: 1rem;
+    background-color: #cbbebe;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.register-error-message--offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.register__container-instructions {
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    background: #000000;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -5px;
 }
 
 .register-button {

@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.login-title {
+    font-size: 1.7rem;
+}
+
 .login__container {
     display: flex;
     flex-direction: column;
@@ -44,6 +48,15 @@
     color: red;
     text-align: center;
     font-weight: bold;
+    font-size: 1rem;
+    background-color: #cbbebe;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.login-error-message--offscreen {
+    position: absolute;
+    left: -9999px;
 }
 
 .login-button {

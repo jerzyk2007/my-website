@@ -10,6 +10,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const userRef = useRef();
+    const errRef = useRef();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -29,8 +30,6 @@ const Login = () => {
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
             setAuth({ username, password, roles, accessToken });
-            setUsername('');
-            setPassword('');
             setSuccessAuth(true);
             setChangeMenu(!changeMenu);
             navigate('/memorek');
@@ -59,7 +58,8 @@ const Login = () => {
 
     return (
         !successAuth ? (<section className="login">
-            <p className="login-error-message">{errMsg ? errMsg : <span style={{ color: "black" }}>Login</span>}</p>
+            <p className={errMsg ? "login-error-message" : "login-error-message--offscreen"} ref={errRef}>{errMsg}</p>
+            <h1 className="login-title">Login</h1>
             <form className="login__container" onSubmit={handleSubmit}>
                 <label htmlFor="username" className="login__container-title">Username:</label>
                 <input
