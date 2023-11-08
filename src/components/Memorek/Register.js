@@ -115,6 +115,7 @@ const Register = () => {
                             className="register-text"
                             type="text"
                             id="username"
+                            autoComplete="off"
                             ref={userRef}
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
