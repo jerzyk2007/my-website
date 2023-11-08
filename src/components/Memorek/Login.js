@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useData from "./hooks/useData";
 import axios from './api/axios';
 import Instruction from "./Instruction";
+import { FiX } from "react-icons/fi";
 import './Login.css';
 
 const Login = () => {
@@ -84,6 +85,7 @@ const Login = () => {
                 />
                 <button className="login-button">Login</button>
             </form>
+            <FiX className='login-close-button' onClick={() => navigate(-1)} />
         </section>) : <Instruction />
     );
 
