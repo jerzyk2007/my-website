@@ -7,7 +7,7 @@ import { FiX } from "react-icons/fi";
 import './Login.css';
 
 const Login = () => {
-    const { setAuth, successAuth, setSuccessAuth, changeMenu, setChangeMenu } = useData();
+    const { auth, setAuth, changeMenu, setChangeMenu } = useData();
     const navigate = useNavigate();
 
     const userRef = useRef();
@@ -31,7 +31,6 @@ const Login = () => {
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
             setAuth({ username, password, roles, accessToken });
-            setSuccessAuth(true);
             setChangeMenu(!changeMenu);
             navigate('/memorek');
             // console.log(JSON.stringify(response.data));
@@ -58,7 +57,7 @@ const Login = () => {
     }, []);
 
     return (
-        !successAuth ? (<section className="login">
+        !auth?.username ? (<section className="login">
             <p className={errMsg ? "login-error-message" : "login-error-message--offscreen"} ref={errRef}>{errMsg}</p>
             <h1 className="login-title">Login</h1>
             <form className="login__container" onSubmit={handleSubmit}>

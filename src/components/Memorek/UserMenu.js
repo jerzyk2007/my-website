@@ -5,7 +5,7 @@ import { SlControlPlay, SlUser, SlBookOpen, SlList, SlGraduation, SlShuffle, SlA
 import './UserMenu.css';
 
 const UserMenu = () => {
-    const { LearnOrTest, languageSwitch, setLanguageSwitch, successAuth, changeMenu, setChangeMenu } = useData();
+    const { LearnOrTest, languageSwitch, setLanguageSwitch, changeMenu, setChangeMenu, auth } = useData();
 
     return (
         <div className="user_menu">
@@ -33,7 +33,7 @@ const UserMenu = () => {
                 <Link to="/memorek/user-settings" className="user_menu-link" >
                     <SlSettings />
                 </Link>}
-            {!successAuth
+            {!auth?.username
                 ? < Link to="/memorek/login" className="user_menu-link" >
                     <SlUser />
                 </Link>
