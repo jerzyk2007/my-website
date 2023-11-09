@@ -4,7 +4,7 @@ import './TestResult.css';
 const TestResult = ({ itemTest }) => {
     const [result, setResult] = useState(0);
 
-    const showAnswers = itemTest.map((item, index) => item.correct === item.selected ? <section key={index} className="test_result_container">
+    const showAnswers = itemTest.map((item, index) => item.correct === item.selected ? <section key={index} className="test_result__container">
         <p className="test_result-question">{item.question}</p>
         <p className="test_result-answer--correct">{item.answers[item.correct]}</p>
     </section> :

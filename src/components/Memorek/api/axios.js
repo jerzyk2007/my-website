@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = 'https://salty-badlands-34718-49e2594dd237.herokuapp.com';
+const BASE_URL = 'https://memorekserver-6298af420e12.herokuapp.com';
 // const BASE_URL = 'http://localhost:3500';
 
 export default axios.create({
