@@ -42,7 +42,7 @@ const Register = () => {
                 setErrMsg("Invalid entry");
                 return;
             }
-            const response = await axiosPrivate.post('/user/register',
+            await axiosPrivate.post('/user/register',
 
                 JSON.stringify({ username, password }),
                 {

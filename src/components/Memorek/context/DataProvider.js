@@ -57,6 +57,7 @@ export const DataProvider = ({ children }) => {
             }
         };
         fetchCollectionsName();
+
     }, []);
 
     return (

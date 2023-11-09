@@ -8,15 +8,11 @@ const UserSettings = () => {
     const { auth } = useData();
     const navigate = useNavigate();
 
-    const handleClick = () => {
-        console.log(auth.roles);
-    };
-
     return (
         <section className='user_settings'>
             {auth?.roles?.includes(200) &&
                 <Link to="/memorek/user-settings/register" className="user_settings-link" >
-                    <button className="user_settings-button" onClick={handleClick} >Register new user</button>
+                    <button className="user_settings-button"  >Register new user</button>
                 </Link>}
             <Link to="/memorek/user-settings/username" className="user_settings-link" >
                 <button className="user_settings-button" >Change user name</button>
