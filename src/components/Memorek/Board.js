@@ -11,6 +11,7 @@ import UserSettings from './UserSettings';
 import AddData from './AddData';
 import ChangeUserName from './ChangeUserName';
 import PersistLogin from './PersistLogin';
+import ChangePassword from './ChangePassword';
 import './Board.css';
 
 const Board = () => {
@@ -38,6 +39,9 @@ const Board = () => {
                     </Route>
                     <Route element={<RequireAuth allowedRoles={[100]} />}>
                         <Route path='user-settings/username' element={<ChangeUserName />} />
+                    </Route>
+                    <Route element={<RequireAuth allowedRoles={[100]} />}>
+                        <Route path='user-settings/changepass' element={<ChangePassword />} />
                     </Route>
                     <Route element={<RequireAuth allowedRoles={[200]} />}>
                         <Route path='user-settings/register' element={<Register />} />
