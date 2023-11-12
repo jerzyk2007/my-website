@@ -30,6 +30,7 @@ const Login = () => {
             );
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
+            persist && localStorage.setItem("username", username);
             setAuth({ username, password, roles, accessToken });
             setChangeMenu(prev => !prev);
             navigate('/memorek');

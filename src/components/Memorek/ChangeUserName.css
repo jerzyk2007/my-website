@@ -22,6 +22,11 @@
     text-align: center;
 }
 
+.change_user_name-info {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
 .change_user_name__container {
     display: flex;
     flex-direction: column;

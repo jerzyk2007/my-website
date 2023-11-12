@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router";
 import useAxiosPrivate from "./hooks/useAxiosPrivate";
 import useData from "./hooks/useData";
+import useLogout from "./hooks/useLogout";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FiX } from "react-icons/fi";
@@ -12,6 +13,7 @@ const ChangeUserName = () => {
     const errRef = useRef();
     const navigate = useNavigate();
     const axiosPrivate = useAxiosPrivate();
+    const logout = useLogout();
 
     const { auth } = useData();
 
@@ -19,7 +21,6 @@ const ChangeUserName = () => {
     const [validUsername, setValidUsername] = useState(false);
 
     const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
 
     const USER_REGEX = /^[A-z][A-z0-9-_@]{3,23}$/;
 
@@ -43,8 +44,8 @@ const ChangeUserName = () => {
                     withCredentials: true,
                 }
             );
-            setSuccess(true);
             setNewUsername('');
+            logout();
 
         }
         catch (err) {
@@ -63,7 +64,6 @@ const ChangeUserName = () => {
     };
 
     const handleExit = () => {
-        navigate(-1);
     };
 
     useEffect(() => {
@@ -80,45 +80,41 @@ const ChangeUserName = () => {
     }, [newUsername]);
     return (
         <>
-            {success ?
-                (<section className="change_user_name">
-                    <h1 className="change_user_name-title">Success!</h1>
-                    <button className="change_user_name-button" onClick={handleExit}>Exit</button>
-                </section>) :
-                (<section className="change_user_name">
-                    <p className={errMsg ? "change_user_name-error-message" : "change_user_name-error-message--offscreen"} ref={errRef}>{errMsg}</p>
-                    <h1 className="change_user_name-title">Change username - pamiętac o dodaniu wylogowania</h1>
-                    <form className="change_user_name__container" onSubmit={handleSubmit}>
+            <section className="change_user_name">
+                <p className={errMsg ? "change_user_name-error-message" : "change_user_name-error-message--offscreen"} ref={errRef}>{errMsg}</p>
+                <h1 className="change_user_name-title">Change username</h1>
+                <h3 className="change_user_name-info">If the username change is successful, you will be automatically logged out.</h3>
+                <form className="change_user_name__container" onSubmit={handleSubmit}>
 
-                        <label htmlFor="username" className="change_user_name__container-title">
-                            Username:
-                            <span className={validUsername ? "change_user_name__container-title--valid" : "change_user_name__container-title--hide"}><FontAwesomeIcon icon={faCheck} /></span>
-                            <span className={validUsername || !newUsername ? "change_user_name__container-title--hide" : "change_user_name__container-title--invalid"}><FontAwesomeIcon icon={faTimes} /></span>
-                        </label>
-                        <input
-                            className="change_user_name-text"
-                            type="text"
-                            id="username"
-                            autoComplete="off"
-                            placeholder={auth.username}
-                            ref={userRef}
-                            value={newUsername}
-                            onChange={(e) => setNewUsername(e.target.value)}
-                            required
-                        // onFocus={() => setUserFocus(true)}
-                        // onBlur={() => setUserFocus(false)}
-                        />
-                        <p className={newUsername && !validUsername ? "change_user_name__container-instructions" : "change_user_name-error-message--offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
-                            4 to 24 characters.<br />
-                            Must begin with a letter.<br />
-                            Letters, numbers, underscores, hyphens allowed.
-                        </p>
+                    <label htmlFor="username" className="change_user_name__container-title">
+                        Username:
+                        <span className={validUsername ? "change_user_name__container-title--valid" : "change_user_name__container-title--hide"}><FontAwesomeIcon icon={faCheck} /></span>
+                        <span className={validUsername || !newUsername ? "change_user_name__container-title--hide" : "change_user_name__container-title--invalid"}><FontAwesomeIcon icon={faTimes} /></span>
+                    </label>
+                    <input
+                        className="change_user_name-text"
+                        type="text"
+                        id="username"
+                        autoComplete="off"
+                        placeholder={auth.username}
+                        ref={userRef}
+                        value={newUsername}
+                        onChange={(e) => setNewUsername(e.target.value)}
+                        required
+                    // onFocus={() => setUserFocus(true)}
+                    // onBlur={() => setUserFocus(false)}
+                    />
+                    <p className={newUsername && !validUsername ? "change_user_name__container-instructions" : "change_user_name-error-message--offscreen"}>
+                        <FontAwesomeIcon icon={faInfoCircle} />
+                        4 to 24 characters.<br />
+                        Must begin with a letter.<br />
+                        Letters, numbers, underscores, hyphens allowed.
+                    </p>
 
-                        <button className="change_user_name-button" disabled={!validUsername}>Change</button>
-                    </form>
-                    <FiX className='change_user_name-close-button' onClick={() => navigate(-1)} />
-                </section>)}
+                    <button className="change_user_name-button" disabled={!validUsername}>Change</button>
+                </form>
+                <FiX className='change_user_name-close-button' onClick={() => navigate(-1)} />
+            </section>
         </>
     );
 };
