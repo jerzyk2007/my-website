@@ -5,7 +5,7 @@ import useData from "./hooks/useData";
 
 const PersistLogin = () => {
     const refresh = useRefreshToken();
-    const { auth } = useData();
+    const { auth, persist } = useData();
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -25,20 +25,13 @@ const PersistLogin = () => {
 
     }, []);
 
-
-    // useEffect(() => {
-    //     console.log(`isLoading: ${isLoading}`);
-    //     console.log(`at: ${JSON.stringify(auth?.accessToken)}`);
-    //     console.log(`roles: ${JSON.stringify(auth?.roles)}`);
-    //     console.log(`user: ${JSON.stringify(auth?.username)}`);
-    // }, [isLoading]);
-
     return (
         <>
-            {isLoading
-                ? <p>Loading ...</p>
-                : <Outlet />}
-            {/* <Outlet /> */}
+            {!persist
+                ? <Outlet />
+                : isLoading
+                    ? <p>Loading ...</p>
+                    : <Outlet />}
         </>
     );
 };

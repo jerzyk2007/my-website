@@ -6,7 +6,8 @@ const useLogout = () => {
 
     const logout = async () => {
         setAuth({});
-        setChangeMenu(true);
+        await setChangeMenu(true);
+        localStorage.removeItem("menu");
         try {
             const response = await axios('/logout', {
                 withCredentials: true

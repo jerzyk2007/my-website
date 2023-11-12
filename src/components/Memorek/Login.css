@@ -86,3 +86,8 @@
     cursor: pointer;
     margin: 5px;
 }
+
+.login__container-persist-title {
+    font-size: .8rem;
+    margin-left: 5px;
+}

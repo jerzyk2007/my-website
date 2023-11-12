@@ -12,7 +12,8 @@ export const DataProvider = ({ children }) => {
     const [LearnOrTest, setLearnOrTest] = useState('learn');
     const [languageSwitch, setLanguageSwitch] = useState(true);
     const [auth, setAuth] = useState({});
-    const [changeMenu, setChangeMenu] = useState(true);
+    const [changeMenu, setChangeMenu] = useState(localStorage.getItem("menu") === null ? true : JSON.parse(localStorage.getItem("menu")));
+    const [persist, setPersist] = useState(JSON.parse(localStorage.getItem("persist")) || false);
 
 
     const fetchPhrases = async (collections) => {
@@ -59,8 +60,13 @@ export const DataProvider = ({ children }) => {
 
     }, []);
 
+    useEffect(() => {
+        localStorage.setItem("menu", JSON.stringify(changeMenu));
+    }, [changeMenu]);
+
+
     return (
-        <DataContext.Provider value={{ phrases, test, errorMessage, collectionsName, fetchPhrases, fetchTestPhrases, LearnOrTest, setLearnOrTest, languageSwitch, setLanguageSwitch, auth, setAuth, changeMenu, setChangeMenu }}>
+        <DataContext.Provider value={{ phrases, test, errorMessage, collectionsName, fetchPhrases, fetchTestPhrases, LearnOrTest, setLearnOrTest, languageSwitch, setLanguageSwitch, auth, setAuth, changeMenu, setChangeMenu, persist, setPersist }}>
             {children}
         </DataContext.Provider>
     );

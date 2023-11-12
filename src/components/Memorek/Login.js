@@ -7,7 +7,7 @@ import { FiX } from "react-icons/fi";
 import './Login.css';
 
 const Login = () => {
-    const { auth, setAuth, changeMenu, setChangeMenu } = useData();
+    const { auth, setAuth, changeMenu, setChangeMenu, persist, setPersist } = useData();
     const navigate = useNavigate();
 
     const userRef = useRef();
@@ -31,9 +31,8 @@ const Login = () => {
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
             setAuth({ username, password, roles, accessToken });
-            setChangeMenu(!changeMenu);
+            setChangeMenu(prev => !prev);
             navigate('/memorek');
-            // console.log(JSON.stringify(response.data));
         }
         catch (err) {
             if (!err?.response) {
@@ -55,6 +54,10 @@ const Login = () => {
     useEffect(() => {
         userRef.current.focus();
     }, []);
+
+    useEffect(() => {
+        localStorage.setItem("persist", persist);
+    }, [persist]);
 
     return (
         !auth?.username ? (<section className="login">
@@ -82,6 +85,15 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
+                <div className="login__container-persist">
+                    <input
+                        type="checkbox"
+                        id="persist"
+                        onChange={() => setPersist(prev => !prev)}
+                        checked={persist}
+                    />
+                    <label htmlFor="persist" className="login__container-persist-title">Trust this device</label>
+                </div>
                 <button className="login-button">Login</button>
             </form>
             <FiX className='login-close-button' onClick={() => navigate(-1)} />
@@ -90,4 +102,4 @@ const Login = () => {
 
 };
 
-export default Login;
+export default Login;;
