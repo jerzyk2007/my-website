@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import InsideHtmlPage from './InsideHtmlPage';
 import { FiX } from "react-icons/fi";
 import './CardItem.css';
@@ -7,9 +7,16 @@ import './CardItem.css';
 
 const CardItem = (props) => {
     const [active, setActive] = useState(true);
+    const navigate = useNavigate();
 
     const handleShowInfo = () => {
         setActive(!active);
+    };
+
+    const handleRedirect = () => {
+        const redirectUrl = 'https://www.memorek-online.pl';
+        window.open(redirectUrl, '_blank');
+        navigate('/nowa-strona');
     };
 
     return (
@@ -29,8 +36,12 @@ const CardItem = (props) => {
                 </div>
 
                 <div className='card-item__item__info'>
-                    <Link className='card-item__item__link' to={props.path}>
-                        <h5 className='card-item__item-title'>{props.title}</h5></Link>
+                    {props.redirect === "false" ? <Link className='card-item__item__link' to={props.path}>
+                        <h5 className='card-item__item-title'>{props.title}</h5></Link> :
+                        <Link className='card-item__item__link' to={props.path} target={props.redirect === "false" ? "_self" : "_blank"}>
+                            <h5 className='card-item__item-title'>{props.title}</h5>
+                        </Link>}
+
                     <h5 className='card-item__item-text' dangerouslySetInnerHTML={{ __html: props.text }}></h5>
                 </div>
                 <div className="card-item__item__more-info">
