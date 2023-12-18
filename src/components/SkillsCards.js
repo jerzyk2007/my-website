@@ -53,8 +53,9 @@ const SkillsCards = () => {
                     text="Program for learning the English language.."
                     label='REACT + NODE + MONGODB'
                     path='https://www.memorek-online.pl'
-                    description='A vocabulary learning program that allows you to study words, phrases, definitions, and also take tests based on your existing knowledge. 
-                    The program is currently under construction.'
+                    description='A vocabulary learning program that allows you to study words, phrases, definitions, and take tests based on your existing knowledge. You can add new expressions, words, verbs, etc., by uploading an Excel file. 
+                    Some features of the program are available only after logging in.
+                    Happy learning!'
                     www=''
                     redirect="true"
                 />
