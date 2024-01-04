@@ -413,7 +413,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 610px;
-  height: 650px;
+  height: 600px;
   background-color: #000;
   font-family: myFirstFont;
   display: -webkit-box;
